@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "p01-es-reference",
+    "phrase_id": "p01",
+    "lang": "es",
+    "system": "Reference",
+    "source": "Take 2 tablets of 500 mg every 6 hours.",
+    "reference": "Tome 2 comprimidos de 500 mg cada 6 horas.",
+    "target": "Tome 2 comprimidos de 500 mg cada 6 horas.",
+    "planted_error": null
+  },
+  {
+    "id": "p01-es-a",
+    "phrase_id": "p01",
+    "lang": "es",
+    "system": "System A",
+    "source": "Take 2 tablets of 500 mg every 6 hours.",
+    "reference": "Tome 2 comprimidos de 500 mg cada 6 horas.",
+    "target": "Tome 2 comprimidos de 500 mg cada 6 horas, y llame a su médico si tiene fiebre.",
+    "planted_error": "addition"
+  },
+  {
+    "id": "p01-es-b",
+    "phrase_id": "p01",
+    "lang": "es",
+    "system": "System B",
+    "source": "Take 2 tablets of 500 mg every 6 hours.",
+    "reference": "Tome 2 comprimidos de 500 mg cada 6 horas.",
+    "target": "Tome 2 comprimidos de 500 ml cada 6 horas.",
+    "planted_error": "swap_unit"
+  },
+  {
+    "id": "p01-es-c",
+    "phrase_id": "p01",
+    "lang": "es",
+    "system": "System C",
+    "source": "Take 2 tablets of 500 mg every 6 hours.",
+    "reference": "Tome 2 comprimidos de 500 mg cada 6 horas.",
+    "target": "Tome 2 comprimidos de 500 mg cada 6 horas, y llame a su médico si tiene fiebre.",
+    "planted_error": "addition"
+  },
+  {
+    "id": "p01-pl-reference",
+    "phrase_id": "p01",
+    "lang": "pl",
+    "system": "Reference",
+    "source": "Take 2 tablets of 500 mg every 6 hours.",
+    "reference": "Proszę przyjmować 2 tabletki po 500 mg co 6 godzin.",
+    "target": "Proszę przyjmować 2 tabletki po 500 mg co 6 godzin.",
+    "planted_error": null
+  },
+  {
+    "id": "p01-pl-a",
+    "phrase_id": "p01",
+    "lang": "pl",
+    "system": "System A",
+    "source": "Take 2 tablets of 500 mg every 6 hours.",
+    "reference": "Proszę przyjmować 2 tabletki po 500 mg co 6 godzin.",
+    "target": "Proszę przyjmować 2 tabletki po 500 mg co 6 godzin.",
+    "planted_error": null
+  },
+  {
+    "id": "p01-pl-b",
+    "phrase_id": "p01",
+    "lang": "pl",
+    "system": "System B",
+    "source": "Take 2 tablets of 500 mg every 6 hours.",
+    "reference": "Proszę przyjmować 2 tabletki po 500 mg co 6 godzin.",
+    "target": "Proszę przyjmować 2 tabletki po 500 ml co 6 godzin.",
+    "planted_error": "swap_unit"
+  },
+  {
+    "id": "p01-pl-c",
+    "phrase_id": "p01",
+    "lang": "pl",
+    "system": "System C",
+    "source": "Take 2 tablets of 500 mg every 6 hours.",
+    "reference": "Proszę przyjmować 2 tabletki po 500 mg co 6 godzin.",
+    "target": "Proszę przyjmować 2 tabletki po 500 mg co 6 godzin.",
+    "planted_error": null
+  },
+  {
+    "id": "p01-pt-reference",
+    "phrase_id": "p01",
+    "lang": "pt",
+    "system": "Reference",
+    "source": "Take 2 tablets of 500 mg every 6 hours.",
+    "reference": "Tome 2 comprimidos de 500 mg a cada 6 horas.",
+    "target": "Tome 2 comprimidos de 500 mg a cada 6 horas.",
+    "planted_error": null
+  },
+  {
+    "id": "p01-pt-a",
+    "phrase_id": "p01",
+    "lang": "pt",
+    "system": "System A",
+    "source": "Take 2 tablets of 500 mg every 6 hours.",
+    "reference": "Tome 2 comprimidos de 500 mg a cada 6 horas.",
+    "target": "Tome 2 comprimidos de 500 mg a cada 6 horas.",
+    "planted_error": null
+  },
+  {
+    "id": "p01-pt-b",
+    "phrase_id": "p01",
+    "lang": "pt",
+    "system": "System B",
+    "source": "Take 2 tablets of 500 mg every 6 hours.",
+    "reference": "Tome 2 comprimidos de 500 mg a cada 6 horas.",
+    "target": "Tome 20 comprimidos de 500 mg a cada 6 horas.",
+    "planted_error": "change_number"
+  },
+  {
+    "id": "p01-pt-c",
+    "phrase_id": "p01",
+    "lang": "pt",
+    "system": "System C",
+    "source": "Take 2 tablets of 500 mg every 6 hours.",
+    "reference": "Tome 2 comprimidos de 500 mg a cada 6 horas.",
+    "target": "Tome 2 comprimidos de 500 mg a cada 6 horas.",
+    "planted_error": null
+  },
+  {
+    "id": "p02-es-reference",
+    "phrase_id": "p02",
+    "lang": "es",
+    "system": "Reference",
+    "source": "Do not take ibuprofen with your blood thinner.",
+    "reference": "No tome ibuprofeno con su anticoagulante.",
+    "target": "No tome ibuprofeno con su anticoagulante.",
+    "planted_error": null
+  },
+  {
+    "id": "p02-es-a",
+    "phrase_id": "p02",
+    "lang": "es",
+    "system": "System A",
+    "source": "Do not take ibuprofen with your blood thinner.",
+    "reference": "No tome ibuprofeno con su anticoagulante.",
+    "target": "No tome ibuprofeno con su anticoagulante.",
+    "planted_error": null
+  },
+  {
+    "id": "p02-es-b",
+    "phrase_id": "p02",
+    "lang": "es",
+    "system": "System B",
+    "source": "Do not take ibuprofen with your blood thinner.",
+    "reference": "No tome ibuprofeno con su anticoagulante.",
+    "target": "No tome ibuprofeno con su anticoagulante.",
+    "planted_error": null
+  },
+  {
+    "id": "p02-es-c",
+    "phrase_id": "p02",
+    "lang": "es",
+    "system": "System C",
+    "source": "Do not take ibuprofen with your blood thinner.",
+    "reference": "No tome ibuprofeno con su anticoagulante.",
+    "target": "No tome ibuprofeno con su anticoagulante, y llame a su médico si tiene fiebre.",
+    "planted_error": "addition"
+  },
+  {
+    "id": "p02-pl-reference",
+    "phrase_id": "p02",
+    "lang": "pl",
+    "system": "Reference",
+    "source": "Do not take ibuprofen with your blood thinner.",
+    "reference": "Proszę nie przyjmować ibuprofenu razem z lekiem przeciwzakrzepowym.",
+    "target": "Proszę nie przyjmować ibuprofenu razem z lekiem przeciwzakrzepowym.",
+    "planted_error": null
+  },
+  {
+    "id": "p02-pl-a",
+    "phrase_id": "p02",
+    "lang": "pl",
+    "system": "System A",
+    "source": "Do not take ibuprofen with your blood thinner.",
+    "reference": "Proszę nie przyjmować ibuprofenu razem z lekiem przeciwzakrzepowym.",
+    "target": "Proszę nie przyjmować ibuprofenu razem z lekiem przeciwzakrzepowym.",
+    "planted_error": null
+  },
+  {
+    "id": "p02-pl-b",
+    "phrase_id": "p02",
+    "lang": "pl",
+    "system": "System B",
+    "source": "Do not take ibuprofen with your blood thinner.",
+    "reference": "Proszę nie przyjmować ibuprofenu razem z lekiem przeciwzakrzepowym.",
+    "target": "Proszę przyjmować ibuprofenu razem z lekiem przeciwzakrzepowym.",
+    "planted_error": "drop_negation"
+  },
+  {
+    "id": "p02-pl-c",
+    "phrase_id": "p02",
+    "lang": "pl",
+    "system": "System C",
+    "source": "Do not take ibuprofen with your blood thinner.",
+    "reference": "Proszę nie przyjmować ibuprofenu razem z lekiem przeciwzakrzepowym.",
+    "target": "Proszę nie przyjmować ibuprofenu razem z lekiem blood thinner.",
+    "planted_error": "untranslated"
+  },
+  {
+    "id": "p02-pt-reference",
+    "phrase_id": "p02",
+    "lang": "pt",
+    "system": "Reference",
+    "source": "Do not take ibuprofen with your blood thinner.",
+    "reference": "Não tome ibuprofeno com o seu anticoagulante.",
+    "target": "Não tome ibuprofeno com o seu anticoagulante.",
+    "planted_error": null
+  },
+  {
+    "id": "p02-pt-a",
+    "phrase_id": "p02",
+    "lang": "pt",
+    "system": "System A",
+    "source": "Do not take ibuprofen with your blood thinner.",
+    "reference": "Não tome ibuprofeno com o seu anticoagulante.",
+    "target": "Não tome ibuprofeno com o seu anticoagulante.",
+    "planted_error": null
+  },
+  {
+    "id": "p02-pt-b",
+    "phrase_id": "p02",
+    "lang": "pt",
+    "system": "System B",
+    "source": "Do not take ibuprofen with your blood thinner.",
+    "reference": "Não tome ibuprofeno com o seu anticoagulante.",
+    "target": "Tome ibuprofeno com o seu anticoagulante.",
+    "planted_error": "drop_negation"
+  },
+  {
+    "id": "p02-pt-c",
+    "phrase_id": "p02",
+    "lang": "pt",
+    "system": "System C",
+    "source": "Do not take ibuprofen with your blood thinner.",
+    "reference": "Não tome ibuprofeno com o seu anticoagulante.",
+    "target": "Não tome ibuprofeno com o seu anticoagulante.",
+    "planted_error": null
+  },
+  {
+    "id": "p03-es-reference",
+    "phrase_id": "p03",
+    "lang": "es",
+    "system": "Reference",
+    "source": "Inject 10 units of insulin before breakfast.",
+    "reference": "Inyéctese 10 unidades de insulina antes del desayuno.",
+    "target": "Inyéctese 10 unidades de insulina antes del desayuno.",
+    "planted_error": null
+  },
+  {
+    "id": "p03-es-a",
+    "phrase_id": "p03",
+    "lang": "es",
+    "system": "System A",
+    "source": "Inject 10 units of insulin before breakfast.",
+    "reference": "Inyéctese 10 unidades de insulina antes del desayuno.",
+    "target": "Inyéctese 10 unidades de insulina antes.",
+    "planted_error": "omission"
+  },
+  {
+    "id": "p03-es-b",
+    "phrase_id": "p03",
+    "lang": "es",
+    "system": "System B",
+    "source": "Inject 10 units of insulin before breakfast.",
+    "reference": "Inyéctese 10 unidades de insulina antes del desayuno.",
+    "target": "Inyéctese 100 unidades de insulina antes del desayuno.",
+    "planted_error": "change_number"
+  },
+  {
+    "id": "p03-es-c",
+    "phrase_id": "p03",
+    "lang": "es",
+    "system": "System C",
+    "source": "Inject 10 units of insulin before breakfast.",
+    "reference": "Inyéctese 10 unidades de insulina antes del desayuno.",
+    "target": "Inyéctese 10 unidades de insulina antes del desayuno.",
+    "planted_error": null
+  },
+  {
+    "id": "p03-pl-reference",
+    "phrase_id": "p03",
+    "lang": "pl",
+    "system": "Reference",
+    "source": "Inject 10 units of insulin before breakfast.",
+    "reference": "Proszę wstrzyknąć 10 jednostek insuliny przed śniadaniem.",
+    "target": "Proszę wstrzyknąć 10 jednostek insuliny przed śniadaniem.",
+    "planted_error": null
+  },
+  {
+    "id": "p03-pl-a",
+    "phrase_id": "p03",
+    "lang": "pl",
+    "system": "System A",
+    "source": "Inject 10 units of insulin before breakfast.",
+    "reference": "Proszę wstrzyknąć 10 jednostek insuliny przed śniadaniem.",
+    "target": "Proszę wstrzyknąć 10 jednostek insuliny przed śniadaniem, a w razie gorączki zadzwonić do lekarza.",
+    "planted_error": "addition"
+  },
+  {
+    "id": "p03-pl-b",
+    "phrase_id": "p03",
+    "lang": "pl",
+    "system": "System B",
+    "source": "Inject 10 units of insulin before breakfast.",
+    "reference": "Proszę wstrzyknąć 10 jednostek insuliny przed śniadaniem.",
+    "target": "Proszę wstrzyknąć 100 jednostek insuliny przed śniadaniem.",
+    "planted_error": "change_number"
+  },
+  {
+    "id": "p03-pl-c",
+    "phrase_id": "p03",
+    "lang": "pl",
+    "system": "System C",
+    "source": "Inject 10 units of insulin before breakfast.",
+    "reference": "Proszę wstrzyknąć 10 jednostek insuliny przed śniadaniem.",
+    "target": "Proszę wstrzyknąć 10 jednostek insulin przed śniadaniem.",
+    "planted_error": "untranslated"
+  },
+  {
+    "id": "p03-pt-reference",
+    "phrase_id": "p03",
+    "lang": "pt",
+    "system": "Reference",
+    "source": "Inject 10 units of insulin before breakfast.",
+    "reference": "Injete 10 unidades de insulina antes do café da manhã.",
+    "target": "Injete 10 unidades de insulina antes do café da manhã.",
+    "planted_error": null
+  },
+  {
+    "id": "p03-pt-a",
+    "phrase_id": "p03",
+    "lang": "pt",
+    "system": "System A",
+    "source": "Inject 10 units of insulin before breakfast.",
+    "reference": "Injete 10 unidades de insulina antes do café da manhã.",
+    "target": "Injete 10 unidades de insulina antes do café da manhã.",
+    "planted_error": null
+  },
+  {
+    "id": "p03-pt-b",
+    "phrase_id": "p03",
+    "lang": "pt",
+    "system": "System B",
+    "source": "Inject 10 units of insulin before breakfast.",
+    "reference": "Injete 10 unidades de insulina antes do café da manhã.",
+    "target": "Injete 100 unidades de insulina antes do café da manhã.",
+    "planted_error": "change_number"
+  },
+  {
+    "id": "p03-pt-c",
+    "phrase_id": "p03",
+    "lang": "pt",
+    "system": "System C",
+    "source": "Inject 10 units of insulin before breakfast.",
+    "reference": "Injete 10 unidades de insulina antes do café da manhã.",
+    "target": "Injete 10 unidades de insulin antes do café da manhã.",
+    "planted_error": "untranslated"
+  },
+  {
+    "id": "p04-es-reference",
+    "phrase_id": "p04",
+    "lang": "es",
+    "system": "Reference",
+    "source": "Do not eat or drink anything after midnight before your surgery.",
+    "reference": "No coma ni beba nada después de la medianoche antes de su cirugía.",
+    "target": "No coma ni beba nada después de la medianoche antes de su cirugía.",
+    "planted_error": null
+  },
+  {
+    "id": "p04-es-a",
+    "phrase_id": "p04",
+    "lang": "es",
+    "system": "System A",
+    "source": "Do not eat or drink anything after midnight before your surgery.",
+    "reference": "No coma ni beba nada después de la medianoche antes de su cirugía.",
+    "target": "No coma ni beba nada después de la medianoche antes de su cirugía.",
+    "planted_error": null
+  },
+  {
+    "id": "p04-es-b",
+    "phrase_id": "p04",
+    "lang": "es",
+    "system": "System B",
+    "source": "Do not eat or drink anything after midnight before your surgery.",
+    "reference": "No coma ni beba nada después de la medianoche antes de su cirugía.",
+    "target": "Coma ni beba nada después de la medianoche antes de su cirugía.",
+    "planted_error": "drop_negation"
+  },
+  {
+    "id": "p04-es-c",
+    "phrase_id": "p04",
+    "lang": "es",
+    "system": "System C",
+    "source": "Do not eat or drink anything after midnight before your surgery.",
+    "reference": "No coma ni beba nada después de la medianoche antes de su cirugía.",
+    "target": "No coma ni beba nada después de la medianoche antes de su cirugía.",
+    "planted_error": null
+  },
+  {
+    "id": "p04-pl-reference",
+    "phrase_id": "p04",
+    "lang": "pl",
+    "system": "Reference",
+    "source": "Do not eat or drink anything after midnight before your surgery.",
+    "reference": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+    "target": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+    "planted_error": null
+  },
+  {
+    "id": "p04-pl-a",
+    "phrase_id": "p04",
+    "lang": "pl",
+    "system": "System A",
+    "source": "Do not eat or drink anything after midnight before your surgery.",
+    "reference": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+    "target": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+    "planted_error": null
+  },
+  {
+    "id": "p04-pl-b",
+    "phrase_id": "p04",
+    "lang": "pl",
+    "system": "System B",
+    "source": "Do not eat or drink anything after midnight before your surgery.",
+    "reference": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+    "target": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+    "planted_error": null
+  },
+  {
+    "id": "p04-pl-c",
+    "phrase_id": "p04",
+    "lang": "pl",
+    "system": "System C",
+    "source": "Do not eat or drink anything after midnight before your surgery.",
+    "reference": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+    "target": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+    "planted_error": null
+  },
+  {
+    "id": "p04-pt-reference",
+    "phrase_id": "p04",
+    "lang": "pt",
+    "system": "Reference",
+    "source": "Do not eat or drink anything after midnight before your surgery.",
+    "reference": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia.",
+    "target": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia.",
+    "planted_error": null
+  },
+  {
+    "id": "p04-pt-a",
+    "phrase_id": "p04",
+    "lang": "pt",
+    "system": "System A",
+    "source": "Do not eat or drink anything after midnight before your surgery.",
+    "reference": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia.",
+    "target": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia.",
+    "planted_error": null
+  },
+  {
+    "id": "p04-pt-b",
+    "phrase_id": "p04",
+    "lang": "pt",
+    "system": "System B",
+    "source": "Do not eat or drink anything after midnight before your surgery.",
+    "reference": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia.",
+    "target": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia.",
+    "planted_error": null
+  },
+  {
+    "id": "p04-pt-c",
+    "phrase_id": "p04",
+    "lang": "pt",
+    "system": "System C",
+    "source": "Do not eat or drink anything after midnight before your surgery.",
+    "reference": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia.",
+    "target": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia, e ligue para o médico se tiver febre.",
+    "planted_error": "addition"
+  },
+  {
+    "id": "p05-es-reference",
+    "phrase_id": "p05",
+    "lang": "es",
+    "system": "Reference",
+    "source": "If you feel constipated, drink 2 litres of water a day.",
+    "reference": "Si está estreñido, beba 2 litros de agua al día.",
+    "target": "Si está estreñido, beba 2 litros de agua al día.",
+    "planted_error": null
+  },
+  {
+    "id": "p05-es-a",
+    "phrase_id": "p05",
+    "lang": "es",
+    "system": "System A",
+    "source": "If you feel constipated, drink 2 litres of water a day.",
+    "reference": "Si está estreñido, beba 2 litros de agua al día.",
+    "target": "Si está estreñido, beba 2 litros de agua al día.",
+    "planted_error": null
+  },
+  {
+    "id": "p05-es-b",
+    "phrase_id": "p05",
+    "lang": "es",
+    "system": "System B",
+    "source": "If you feel constipated, drink 2 litres of water a day.",
+    "reference": "Si está estreñido, beba 2 litros de agua al día.",
+    "target": "Si está estreñido, beba 2 litros de agua al día.",
+    "planted_error": null
+  },
+  {
+    "id": "p05-es-c",
+    "phrase_id": "p05",
+    "lang": "es",
+    "system": "System C",
+    "source": "If you feel constipated, drink 2 litres of water a day.",
+    "reference": "Si está estreñido, beba 2 litros de agua al día.",
+    "target": "Si está constipado, beba 2 litros de agua al día.",
+    "planted_error": "false_friend"
+  },
+  {
+    "id": "p05-pl-reference",
+    "phrase_id": "p05",
+    "lang": "pl",
+    "system": "Reference",
+    "source": "If you feel constipated, drink 2 litres of water a day.",
+    "reference": "W przypadku zaparcia proszę pić 2 litry wody dziennie.",
+    "target": "W przypadku zaparcia proszę pić 2 litry wody dziennie.",
+    "planted_error": null
+  },
+  {
+    "id": "p05-pl-a",
+    "phrase_id": "p05",
+    "lang": "pl",
+    "system": "System A",
+    "source": "If you feel constipated, drink 2 litres of water a day.",
+    "reference": "W przypadku zaparcia proszę pić 2 litry wody dziennie.",
+    "target": "W przypadku zaparcia proszę pić 2 litry wody dziennie.",
+    "planted_error": null
+  },
+  {
+    "id": "p05-pl-b",
+    "phrase_id": "p05",
+    "lang": "pl",
+    "system": "System B",
+    "source": "If you feel constipated, drink 2 litres of water a day.",
+    "reference": "W przypadku zaparcia proszę pić 2 litry wody dziennie.",
+    "target": "W przypadku zaparcia proszę pić 2 litry wody dziennie.",
+    "planted_error": null
+  },
+  {
+    "id": "p05-pl-c",
+    "phrase_id": "p05",
+    "lang": "pl",
+    "system": "System C",
+    "source": "If you feel constipated, drink 2 litres of water a day.",
+    "reference": "W przypadku zaparcia proszę pić 2 litry wody dziennie.",
+    "target": "W przypadku constipated proszę pić 2 litry wody dziennie.",
+    "planted_error": "untranslated"
+  },
+  {
+    "id": "p05-pt-reference",
+    "phrase_id": "p05",
+    "lang": "pt",
+    "system": "Reference",
+    "source": "If you feel constipated, drink 2 litres of water a day.",
+    "reference": "Se estiver com prisão de ventre, beba 2 litros de água por dia.",
+    "target": "Se estiver com prisão de ventre, beba 2 litros de água por dia.",
+    "planted_error": null
+  },
+  {
+    "id": "p05-pt-a",
+    "phrase_id": "p05",
+    "lang": "pt",
+    "system": "System A",
+    "source": "If you feel constipated, drink 2 litres of water a day.",
+    "reference": "Se estiver com prisão de ventre, beba 2 litros de água por dia.",
+    "target": "Se estiver com prisão de ventre, beba 2 litros de água por dia, e ligue para o médico se tiver febre.",
+    "planted_error": "addition"
+  },
+  {
+    "id": "p05-pt-b",
+    "phrase_id": "p05",
+    "lang": "pt",
+    "system": "System B",
+    "source": "If you feel constipated, drink 2 litres of water a day.",
+    "reference": "Se estiver com prisão de ventre, beba 2 litros de água por dia.",
+    "target": "Se estiver com prisão de ventre, beba 20 litros de água por dia.",
+    "planted_error": "change_number"
+  },
+  {
+    "id": "p05-pt-c",
+    "phrase_id": "p05",
+    "lang": "pt",
+    "system": "System C",
+    "source": "If you feel constipated, drink 2 litres of water a day.",
+    "reference": "Se estiver com prisão de ventre, beba 2 litros de água por dia.",
+    "target": "Se estiver constipado, beba 2 litros de água por dia.",
+    "planted_error": "false_friend"
+  },
+  {
+    "id": "p06-es-reference",
+    "phrase_id": "p06",
+    "lang": "es",
+    "system": "Reference",
+    "source": "Apply the cream twice a day for 7 days.",
+    "reference": "Aplique la crema dos veces al día durante 7 días.",
+    "target": "Aplique la crema dos veces al día durante 7 días.",
+    "planted_error": null
+  },
+  {
+    "id": "p06-es-a",
+    "phrase_id": "p06",
+    "lang": "es",
+    "system": "System A",
+    "source": "Apply the cream twice a day for 7 days.",
+    "reference": "Aplique la crema dos veces al día durante 7 días.",
+    "target": "Aplique la crema dos veces al día durante 7 días.",
+    "planted_error": null
+  },
+  {
+    "id": "p06-es-b",
+    "phrase_id": "p06",
+    "lang": "es",
+    "system": "System B",
+    "source": "Apply the cream twice a day for 7 days.",
+    "reference": "Aplique la crema dos veces al día durante 7 días.",
+    "target": "Aplique la crema dos veces al día durante 7 días.",
+    "planted_error": null
+  },
+  {
+    "id": "p06-es-c",
+    "phrase_id": "p06",
+    "lang": "es",
+    "system": "System C",
+    "source": "Apply the cream twice a day for 7 days.",
+    "reference": "Aplique la crema dos veces al día durante 7 días.",
+    "target": "Aplique la crema dos veces al día durante 7 días.",
+    "planted_error": null
+  },
+  {
+    "id": "p06-pl-reference",
+    "phrase_id": "p06",
+    "lang": "pl",
+    "system": "Reference",
+    "source": "Apply the cream twice a day for 7 days.",
+    "reference": "Proszę nakładać krem dwa razy dziennie przez 7 dni.",
+    "target": "Proszę nakładać krem dwa razy dziennie przez 7 dni.",
+    "planted_error": null
+  },
+  {
+    "id": "p06-pl-a",
+    "phrase_id": "p06",
+    "lang": "pl",
+    "system": "System A",
+    "source": "Apply the cream twice a day for 7 days.",
+    "reference": "Proszę nakładać krem dwa razy dziennie przez 7 dni.",
+    "target": "Proszę nakładać krem dwa razy dziennie przez 7 dni.",
+    "planted_error": null
+  },
+  {
+    "id": "p06-pl-b",
+    "phrase_id": "p06",
+    "lang": "pl",
+    "system": "System B",
+    "source": "Apply the cream twice a day for 7 days.",
+    "reference": "Proszę nakładać krem dwa razy dziennie przez 7 dni.",
+    "target": "Proszę nakładać krem dwa razy dziennie przez 7 tygodni.",
+    "planted_error": "swap_unit"
+  },
+  {
+    "id": "p06-pl-c",
+    "phrase_id": "p06",
+    "lang": "pl",
+    "system": "System C",
+    "source": "Apply the cream twice a day for 7 days.",
+    "reference": "Proszę nakładać krem dwa razy dziennie przez 7 dni.",
+    "target": "Proszę nakładać krem dwa razy dziennie przez 7 dni, a w razie gorączki zadzwonić do lekarza.",
+    "planted_error": "addition"
+  },
+  {
+    "id": "p06-pt-reference",
+    "phrase_id": "p06",
+    "lang": "pt",
+    "system": "Reference",
+    "source": "Apply the cream twice a day for 7 days.",
+    "reference": "Aplique o creme duas vezes ao dia durante 7 dias.",
+    "target": "Aplique o creme duas vezes ao dia durante 7 dias.",
+    "planted_error": null
+  },
+  {
+    "id": "p06-pt-a",
+    "phrase_id": "p06",
+    "lang": "pt",
+    "system": "System A",
+    "source": "Apply the cream twice a day for 7 days.",
+    "reference": "Aplique o creme duas vezes ao dia durante 7 dias.",
+    "target": "Aplique o creme duas vezes ao dia durante 7 dias.",
+    "planted_error": null
+  },
+  {
+    "id": "p06-pt-b",
+    "phrase_id": "p06",
+    "lang": "pt",
+    "system": "System B",
+    "source": "Apply the cream twice a day for 7 days.",
+    "reference": "Aplique o creme duas vezes ao dia durante 7 dias.",
+    "target": "Aplique o creme duas vezes ao dia durante 70 dias.",
+    "planted_error": "change_number"
+  },
+  {
+    "id": "p06-pt-c",
+    "phrase_id": "p06",
+    "lang": "pt",
+    "system": "System C",
+    "source": "Apply the cream twice a day for 7 days.",
+    "reference": "Aplique o creme duas vezes ao dia durante 7 dias.",
+    "target": "Aplique o creme duas vezes ao dia durante 7 dias, e ligue para o médico se tiver febre.",
+    "planted_error": "addition"
+  },
+  {
+    "id": "p07-es-reference",
+    "phrase_id": "p07",
+    "lang": "es",
+    "system": "Reference",
+    "source": "Your injury needs 5 stitches.",
+    "reference": "Su lesión necesita 5 puntos de sutura.",
+    "target": "Su lesión necesita 5 puntos de sutura.",
+    "planted_error": null
+  },
+  {
+    "id": "p07-es-a",
+    "phrase_id": "p07",
+    "lang": "es",
+    "system": "System A",
+    "source": "Your injury needs 5 stitches.",
+    "reference": "Su lesión necesita 5 puntos de sutura.",
+    "target": "Su lesión necesita 5 puntos de sutura.",
+    "planted_error": null
+  },
+  {
+    "id": "p07-es-b",
+    "phrase_id": "p07",
+    "lang": "es",
+    "system": "System B",
+    "source": "Your injury needs 5 stitches.",
+    "reference": "Su lesión necesita 5 puntos de sutura.",
+    "target": "Su lesión necesita 50 puntos de sutura.",
+    "planted_error": "change_number"
+  },
+  {
+    "id": "p07-es-c",
+    "phrase_id": "p07",
+    "lang": "es",
+    "system": "System C",
+    "source": "Your injury needs 5 stitches.",
+    "reference": "Su lesión necesita 5 puntos de sutura.",
+    "target": "Su injuria necesita 5 puntos de sutura.",
+    "planted_error": "false_friend"
+  },
+  {
+    "id": "p07-pl-reference",
+    "phrase_id": "p07",
+    "lang": "pl",
+    "system": "Reference",
+    "source": "Your injury needs 5 stitches.",
+    "reference": "Rana wymaga założenia 5 szwów.",
+    "target": "Rana wymaga założenia 5 szwów.",
+    "planted_error": null
+  },
+  {
+    "id": "p07-pl-a",
+    "phrase_id": "p07",
+    "lang": "pl",
+    "system": "System A",
+    "source": "Your injury needs 5 stitches.",
+    "reference": "Rana wymaga założenia 5 szwów.",
+    "target": "Rana wymaga założenia 5 szwów.",
+    "planted_error": null
+  },
+  {
+    "id": "p07-pl-b",
+    "phrase_id": "p07",
+    "lang": "pl",
+    "system": "System B",
+    "source": "Your injury needs 5 stitches.",
+    "reference": "Rana wymaga założenia 5 szwów.",
+    "target": "Rana wymaga założenia 50 szwów.",
+    "planted_error": "change_number"
+  },
+  {
+    "id": "p07-pl-c",
+    "phrase_id": "p07",
+    "lang": "pl",
+    "system": "System C",
+    "source": "Your injury needs 5 stitches.",
+    "reference": "Rana wymaga założenia 5 szwów.",
+    "target": "Rana wymaga założenia 5 szwów, a w razie gorączki zadzwonić do lekarza.",
+    "planted_error": "addition"
+  },
+  {
+    "id": "p07-pt-reference",
+    "phrase_id": "p07",
+    "lang": "pt",
+    "system": "Reference",
+    "source": "Your injury needs 5 stitches.",
+    "reference": "Sua lesão precisa de 5 pontos.",
+    "target": "Sua lesão precisa de 5 pontos.",
+    "planted_error": null
+  },
+  {
+    "id": "p07-pt-a",
+    "phrase_id": "p07",
+    "lang": "pt",
+    "system": "System A",
+    "source": "Your injury needs 5 stitches.",
+    "reference": "Sua lesão precisa de 5 pontos.",
+    "target": "Sua lesão precisa de 5 pontos.",
+    "planted_error": null
+  },
+  {
+    "id": "p07-pt-b",
+    "phrase_id": "p07",
+    "lang": "pt",
+    "system": "System B",
+    "source": "Your injury needs 5 stitches.",
+    "reference": "Sua lesão precisa de 5 pontos.",
+    "target": "Sua lesão precisa de 5 pontos.",
+    "planted_error": null
+  },
+  {
+    "id": "p07-pt-c",
+    "phrase_id": "p07",
+    "lang": "pt",
+    "system": "System C",
+    "source": "Your injury needs 5 stitches.",
+    "reference": "Sua lesão precisa de 5 pontos.",
+    "target": "Sua injúria precisa de 5 pontos.",
+    "planted_error": "false_friend"
+  },
+  {
+    "id": "p08-es-reference",
+    "phrase_id": "p08",
+    "lang": "es",
+    "system": "Reference",
+    "source": "Never stop taking this medicine without asking your doctor.",
+    "reference": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+    "target": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+    "planted_error": null
+  },
+  {
+    "id": "p08-es-a",
+    "phrase_id": "p08",
+    "lang": "es",
+    "system": "System A",
+    "source": "Never stop taking this medicine without asking your doctor.",
+    "reference": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+    "target": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+    "planted_error": null
+  },
+  {
+    "id": "p08-es-b",
+    "phrase_id": "p08",
+    "lang": "es",
+    "system": "System B",
+    "source": "Never stop taking this medicine without asking your doctor.",
+    "reference": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+    "target": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+    "planted_error": null
+  },
+  {
+    "id": "p08-es-c",
+    "phrase_id": "p08",
+    "lang": "es",
+    "system": "System C",
+    "source": "Never stop taking this medicine without asking your doctor.",
+    "reference": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+    "target": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+    "planted_error": null
+  },
+  {
+    "id": "p08-pl-reference",
+    "phrase_id": "p08",
+    "lang": "pl",
+    "system": "Reference",
+    "source": "Never stop taking this medicine without asking your doctor.",
+    "reference": "Nigdy nie należy przerywać przyjmowania tego leku bez konsultacji z lekarzem.",
+    "target": "Nigdy nie należy przerywać przyjmowania tego leku bez konsultacji z lekarzem.",
+    "planted_error": null
+  },
+  {
+    "id": "p08-pl-a",
+    "phrase_id": "p08",
+    "lang": "pl",
+    "system": "System A",
+    "source": "Never stop taking this medicine without asking your doctor.",
+    "reference": "Nigdy nie należy przerywać przyjmowania tego leku bez konsultacji z lekarzem.",
+    "target": "Nigdy nie należy przerywać przyjmowania tego leku bez konsultacji z lekarzem.",
+    "planted_error": null
+  },
+  {
+    "id": "p08-pl-b",
+    "phrase_id": "p08",
+    "lang": "pl",
+    "system": "System B",
+    "source": "Never stop taking this medicine without asking your doctor.",
+    "reference": "Nigdy nie należy przerywać przyjmowania tego leku bez konsultacji z lekarzem.",
+    "target": "Należy przerywać przyjmowania tego leku bez konsultacji z lekarzem.",
+    "planted_error": "drop_negation"
+  },
+  {
+    "id": "p08-pl-c",
+    "phrase_id": "p08",
+    "lang": "pl",
+    "system": "System C",
+    "source": "Never stop taking this medicine without asking your doctor.",
+    "reference": "Nigdy nie należy przerywać przyjmowania tego leku bez konsultacji z lekarzem.",
+    "target": "Nigdy nie należy przerywać przyjmowania tego leku bez konsultacji z lekarzem, a w razie gorączki zadzwonić do lekarza.",
+    "planted_error": "addition"
+  },
+  {
+    "id": "p08-pt-reference",
+    "phrase_id": "p08",
+    "lang": "pt",
+    "system": "Reference",
+    "source": "Never stop taking this medicine without asking your doctor.",
+    "reference": "Nunca pare de tomar este medicamento sem falar com o seu médico.",
+    "target": "Nunca pare de tomar este medicamento sem falar com o seu médico.",
+    "planted_error": null
+  },
+  {
+    "id": "p08-pt-a",
+    "phrase_id": "p08",
+    "lang": "pt",
+    "system": "System A",
+    "source": "Never stop taking this medicine without asking your doctor.",
+    "reference": "Nunca pare de tomar este medicamento sem falar com o seu médico.",
+    "target": "Nunca pare de tomar este medicamento sem falar com o seu médico.",
+    "planted_error": null
+  },
+  {
+    "id": "p08-pt-b",
+    "phrase_id": "p08",
+    "lang": "pt",
+    "system": "System B",
+    "source": "Never stop taking this medicine without asking your doctor.",
+    "reference": "Nunca pare de tomar este medicamento sem falar com o seu médico.",
+    "target": "Pare de tomar este medicamento sem falar com o seu médico.",
+    "planted_error": "drop_negation"
+  },
+  {
+    "id": "p08-pt-c",
+    "phrase_id": "p08",
+    "lang": "pt",
+    "system": "System C",
+    "source": "Never stop taking this medicine without asking your doctor.",
+    "reference": "Nunca pare de tomar este medicamento sem falar com o seu médico.",
+    "target": "Nunca pare de tomar este medicamento sem falar com o seu médico.",
+    "planted_error": null
+  },
+  {
+    "id": "p09-es-reference",
+    "phrase_id": "p09",
+    "lang": "es",
+    "system": "Reference",
+    "source": "Give the child 5 ml of syrup every 8 hours.",
+    "reference": "Dele al niño 5 ml de jarabe cada 8 horas.",
+    "target": "Dele al niño 5 ml de jarabe cada 8 horas.",
+    "planted_error": null
+  },
+  {
+    "id": "p09-es-a",
+    "phrase_id": "p09",
+    "lang": "es",
+    "system": "System A",
+    "source": "Give the child 5 ml of syrup every 8 hours.",
+    "reference": "Dele al niño 5 ml de jarabe cada 8 horas.",
+    "target": "Dele al niño 5 ml de jarabe cada 8 horas.",
+    "planted_error": null
+  },
+  {
+    "id": "p09-es-b",
+    "phrase_id": "p09",
+    "lang": "es",
+    "system": "System B",
+    "source": "Give the child 5 ml of syrup every 8 hours.",
+    "reference": "Dele al niño 5 ml de jarabe cada 8 horas.",
+    "target": "Dele al niño 50 ml de jarabe cada 8 horas.",
+    "planted_error": "change_number"
+  },
+  {
+    "id": "p09-es-c",
+    "phrase_id": "p09",
+    "lang": "es",
+    "system": "System C",
+    "source": "Give the child 5 ml of syrup every 8 hours.",
+    "reference": "Dele al niño 5 ml de jarabe cada 8 horas.",
+    "target": "Dele al niño 5 ml de jarabe cada 8 horas.",
+    "planted_error": null
+  },
+  {
+    "id": "p09-pl-reference",
+    "phrase_id": "p09",
+    "lang": "pl",
+    "system": "Reference",
+    "source": "Give the child 5 ml of syrup every 8 hours.",
+    "reference": "Proszę podawać dziecku 5 ml syropu co 8 godzin.",
+    "target": "Proszę podawać dziecku 5 ml syropu co 8 godzin.",
+    "planted_error": null
+  },
+  {
+    "id": "p09-pl-a",
+    "phrase_id": "p09",
+    "lang": "pl",
+    "system": "System A",
+    "source": "Give the child 5 ml of syrup every 8 hours.",
+    "reference": "Proszę podawać dziecku 5 ml syropu co 8 godzin.",
+    "target": "Proszę podawać dziecku 5 ml syropu co 8 godzin.",
+    "planted_error": null
+  },
+  {
+    "id": "p09-pl-b",
+    "phrase_id": "p09",
+    "lang": "pl",
+    "system": "System B",
+    "source": "Give the child 5 ml of syrup every 8 hours.",
+    "reference": "Proszę podawać dziecku 5 ml syropu co 8 godzin.",
+    "target": "Proszę podawać dziecku 5 mg syropu co 8 godzin.",
+    "planted_error": "swap_unit"
+  },
+  {
+    "id": "p09-pl-c",
+    "phrase_id": "p09",
+    "lang": "pl",
+    "system": "System C",
+    "source": "Give the child 5 ml of syrup every 8 hours.",
+    "reference": "Proszę podawać dziecku 5 ml syropu co 8 godzin.",
+    "target": "Proszę podawać dziecku 5 ml syropu co 8 godzin.",
+    "planted_error": null
+  },
+  {
+    "id": "p09-pt-reference",
+    "phrase_id": "p09",
+    "lang": "pt",
+    "system": "Reference",
+    "source": "Give the child 5 ml of syrup every 8 hours.",
+    "reference": "Dê à criança 5 ml de xarope a cada 8 horas.",
+    "target": "Dê à criança 5 ml de xarope a cada 8 horas.",
+    "planted_error": null
+  },
+  {
+    "id": "p09-pt-a",
+    "phrase_id": "p09",
+    "lang": "pt",
+    "system": "System A",
+    "source": "Give the child 5 ml of syrup every 8 hours.",
+    "reference": "Dê à criança 5 ml de xarope a cada 8 horas.",
+    "target": "Dê à criança 5 ml de xarope a cada 8 horas.",
+    "planted_error": null
+  },
+  {
+    "id": "p09-pt-b",
+    "phrase_id": "p09",
+    "lang": "pt",
+    "system": "System B",
+    "source": "Give the child 5 ml of syrup every 8 hours.",
+    "reference": "Dê à criança 5 ml de xarope a cada 8 horas.",
+    "target": "Dê à criança 50 ml de xarope a cada 8 horas.",
+    "planted_error": "change_number"
+  },
+  {
+    "id": "p09-pt-c",
+    "phrase_id": "p09",
+    "lang": "pt",
+    "system": "System C",
+    "source": "Give the child 5 ml of syrup every 8 hours.",
+    "reference": "Dê à criança 5 ml de xarope a cada 8 horas.",
+    "target": "Dê à criança 5 ml de xarope a cada 8 horas, e ligue para o médico se tiver febre.",
+    "planted_error": "addition"
+  },
+  {
+    "id": "p10-es-reference",
+    "phrase_id": "p10",
+    "lang": "es",
+    "system": "Reference",
+    "source": "You are allergic to penicillin, so do not take amoxicillin.",
+    "reference": "Es alérgico a la penicilina, así que no tome amoxicilina.",
+    "target": "Es alérgico a la penicilina, así que no tome amoxicilina.",
+    "planted_error": null
+  },
+  {
+    "id": "p10-es-a",
+    "phrase_id": "p10",
+    "lang": "es",
+    "system": "System A",
+    "source": "You are allergic to penicillin, so do not take amoxicillin.",
+    "reference": "Es alérgico a la penicilina, así que no tome amoxicilina.",
+    "target": "Es alérgico a la penicilina, así que no tome amoxicilina.",
+    "planted_error": null
+  },
+  {
+    "id": "p10-es-b",
+    "phrase_id": "p10",
+    "lang": "es",
+    "system": "System B",
+    "source": "You are allergic to penicillin, so do not take amoxicillin.",
+    "reference": "Es alérgico a la penicilina, así que no tome amoxicilina.",
+    "target": "Es alérgico a la penicilina, así que no tome amoxicilina.",
+    "planted_error": null
+  },
+  {
+    "id": "p10-es-c",
+    "phrase_id": "p10",
+    "lang": "es",
+    "system": "System C",
+    "source": "You are allergic to penicillin, so do not take amoxicillin.",
+    "reference": "Es alérgico a la penicilina, así que no tome amoxicilina.",
+    "target": "Es alérgico a la penicillin, así que no tome amoxicilina.",
+    "planted_error": "untranslated"
+  },
+  {
+    "id": "p10-pl-reference",
+    "phrase_id": "p10",
+    "lang": "pl",
+    "system": "Reference",
+    "source": "You are allergic to penicillin, so do not take amoxicillin.",
+    "reference": "Występuje uczulenie na penicylinę, dlatego proszę nie przyjmować amoksycyliny.",
+    "target": "Występuje uczulenie na penicylinę, dlatego proszę nie przyjmować amoksycyliny.",
+    "planted_error": null
+  },
+  {
+    "id": "p10-pl-a",
+    "phrase_id": "p10",
+    "lang": "pl",
+    "system": "System A",
+    "source": "You are allergic to penicillin, so do not take amoxicillin.",
+    "reference": "Występuje uczulenie na penicylinę, dlatego proszę nie przyjmować amoksycyliny.",
+    "target": "Występuje uczulenie na penicylinę, dlatego proszę nie przyjmować amoksycyliny.",
+    "planted_error": null
+  },
+  {
+    "id": "p10-pl-b",
+    "phrase_id": "p10",
+    "lang": "pl",
+    "system": "System B",
+    "source": "You are allergic to penicillin, so do not take amoxicillin.",
+    "reference": "Występuje uczulenie na penicylinę, dlatego proszę nie przyjmować amoksycyliny.",
+    "target": "Występuje uczulenie na penicylinę, dlatego proszę przyjmować amoksycyliny.",
+    "planted_error": "drop_negation"
+  },
+  {
+    "id": "p10-pl-c",
+    "phrase_id": "p10",
+    "lang": "pl",
+    "system": "System C",
+    "source": "You are allergic to penicillin, so do not take amoxicillin.",
+    "reference": "Występuje uczulenie na penicylinę, dlatego proszę nie przyjmować amoksycyliny.",
+    "target": "Występuje uczulenie na penicillin, dlatego proszę nie przyjmować amoksycyliny.",
+    "planted_error": "untranslated"
+  },
+  {
+    "id": "p10-pt-reference",
+    "phrase_id": "p10",
+    "lang": "pt",
+    "system": "Reference",
+    "source": "You are allergic to penicillin, so do not take amoxicillin.",
+    "reference": "Você é alérgico à penicilina, então não tome amoxicilina.",
+    "target": "Você é alérgico à penicilina, então não tome amoxicilina.",
+    "planted_error": null
+  },
+  {
+    "id": "p10-pt-a",
+    "phrase_id": "p10",
+    "lang": "pt",
+    "system": "System A",
+    "source": "You are allergic to penicillin, so do not take amoxicillin.",
+    "reference": "Você é alérgico à penicilina, então não tome amoxicilina.",
+    "target": "Você é alérgico à penicilina, então não tome amoxicilina.",
+    "planted_error": null
+  },
+  {
+    "id": "p10-pt-b",
+    "phrase_id": "p10",
+    "lang": "pt",
+    "system": "System B",
+    "source": "You are allergic to penicillin, so do not take amoxicillin.",
+    "reference": "Você é alérgico à penicilina, então não tome amoxicilina.",
+    "target": "Você é alérgico à penicilina, então não tome amoxicilina.",
+    "planted_error": null
+  },
+  {
+    "id": "p10-pt-c",
+    "phrase_id": "p10",
+    "lang": "pt",
+    "system": "System C",
+    "source": "You are allergic to penicillin, so do not take amoxicillin.",
+    "reference": "Você é alérgico à penicilina, então não tome amoxicilina.",
+    "target": "Você é alérgico à penicilina, então não tome amoxicilina.",
+    "planted_error": null
+  },
+  {
+    "id": "p11-es-reference",
+    "phrase_id": "p11",
+    "lang": "es",
+    "system": "Reference",
+    "source": "Come back in 14 days to remove the stitches.",
+    "reference": "Vuelva dentro de 14 días para retirar los puntos.",
+    "target": "Vuelva dentro de 14 días para retirar los puntos.",
+    "planted_error": null
+  },
+  {
+    "id": "p11-es-a",
+    "phrase_id": "p11",
+    "lang": "es",
+    "system": "System A",
+    "source": "Come back in 14 days to remove the stitches.",
+    "reference": "Vuelva dentro de 14 días para retirar los puntos.",
+    "target": "Vuelva dentro de 14 días para retirar los puntos.",
+    "planted_error": null
+  },
+  {
+    "id": "p11-es-b",
+    "phrase_id": "p11",
+    "lang": "es",
+    "system": "System B",
+    "source": "Come back in 14 days to remove the stitches.",
+    "reference": "Vuelva dentro de 14 días para retirar los puntos.",
+    "target": "Vuelva dentro de 140 días para retirar los puntos.",
+    "planted_error": "change_number"
+  },
+  {
+    "id": "p11-es-c",
+    "phrase_id": "p11",
+    "lang": "es",
+    "system": "System C",
+    "source": "Come back in 14 days to remove the stitches.",
+    "reference": "Vuelva dentro de 14 días para retirar los puntos.",
+    "target": "Vuelva dentro de 14 días para retirar los stitches.",
+    "planted_error": "untranslated"
+  },
+  {
+    "id": "p11-pl-reference",
+    "phrase_id": "p11",
+    "lang": "pl",
+    "system": "Reference",
+    "source": "Come back in 14 days to remove the stitches.",
+    "reference": "Proszę wrócić za 14 dni, aby zdjąć szwy.",
+    "target": "Proszę wrócić za 14 dni, aby zdjąć szwy.",
+    "planted_error": null
+  },
+  {
+    "id": "p11-pl-a",
+    "phrase_id": "p11",
+    "lang": "pl",
+    "system": "System A",
+    "source": "Come back in 14 days to remove the stitches.",
+    "reference": "Proszę wrócić za 14 dni, aby zdjąć szwy.",
+    "target": "Proszę wrócić za 14 dni.",
+    "planted_error": "omission"
+  },
+  {
+    "id": "p11-pl-b",
+    "phrase_id": "p11",
+    "lang": "pl",
+    "system": "System B",
+    "source": "Come back in 14 days to remove the stitches.",
+    "reference": "Proszę wrócić za 14 dni, aby zdjąć szwy.",
+    "target": "Proszę wrócić za 14 tygodni, aby zdjąć szwy.",
+    "planted_error": "swap_unit"
+  },
+  {
+    "id": "p11-pl-c",
+    "phrase_id": "p11",
+    "lang": "pl",
+    "system": "System C",
+    "source": "Come back in 14 days to remove the stitches.",
+    "reference": "Proszę wrócić za 14 dni, aby zdjąć szwy.",
+    "target": "Proszę wrócić za 14 dni, aby zdjąć szwy, a w razie gorączki zadzwonić do lekarza.",
+    "planted_error": "addition"
+  },
+  {
+    "id": "p11-pt-reference",
+    "phrase_id": "p11",
+    "lang": "pt",
+    "system": "Reference",
+    "source": "Come back in 14 days to remove the stitches.",
+    "reference": "Volte daqui a 14 dias para retirar os pontos.",
+    "target": "Volte daqui a 14 dias para retirar os pontos.",
+    "planted_error": null
+  },
+  {
+    "id": "p11-pt-a",
+    "phrase_id": "p11",
+    "lang": "pt",
+    "system": "System A",
+    "source": "Come back in 14 days to remove the stitches.",
+    "reference": "Volte daqui a 14 dias para retirar os pontos.",
+    "target": "Volte daqui a 14 dias para.",
+    "planted_error": "omission"
+  },
+  {
+    "id": "p11-pt-b",
+    "phrase_id": "p11",
+    "lang": "pt",
+    "system": "System B",
+    "source": "Come back in 14 days to remove the stitches.",
+    "reference": "Volte daqui a 14 dias para retirar os pontos.",
+    "target": "Volte daqui a 14 dias para retirar os pontos.",
+    "planted_error": null
+  },
+  {
+    "id": "p11-pt-c",
+    "phrase_id": "p11",
+    "lang": "pt",
+    "system": "System C",
+    "source": "Come back in 14 days to remove the stitches.",
+    "reference": "Volte daqui a 14 dias para retirar os pontos.",
+    "target": "Volte daqui a 14 dias para retirar os stitches.",
+    "planted_error": "untranslated"
+  },
+  {
+    "id": "p12-es-reference",
+    "phrase_id": "p12",
+    "lang": "es",
+    "system": "Reference",
+    "source": "Check your blood pressure every morning and write it down.",
+    "reference": "Mídase la presión arterial cada mañana y anótela.",
+    "target": "Mídase la presión arterial cada mañana y anótela.",
+    "planted_error": null
+  },
+  {
+    "id": "p12-es-a",
+    "phrase_id": "p12",
+    "lang": "es",
+    "system": "System A",
+    "source": "Check your blood pressure every morning and write it down.",
+    "reference": "Mídase la presión arterial cada mañana y anótela.",
+    "target": "Mídase la presión arterial cada mañana y anótela.",
+    "planted_error": null
+  },
+  {
+    "id": "p12-es-b",
+    "phrase_id": "p12",
+    "lang": "es",
+    "system": "System B",
+    "source": "Check your blood pressure every morning and write it down.",
+    "reference": "Mídase la presión arterial cada mañana y anótela.",
+    "target": "Mídase la presión arterial cada mañana y anótela.",
+    "planted_error": null
+  },
+  {
+    "id": "p12-es-c",
+    "phrase_id": "p12",
+    "lang": "es",
+    "system": "System C",
+    "source": "Check your blood pressure every morning and write it down.",
+    "reference": "Mídase la presión arterial cada mañana y anótela.",
+    "target": "Mídase la presión arterial cada mañana y anótela.",
+    "planted_error": null
+  },
+  {
+    "id": "p12-pl-reference",
+    "phrase_id": "p12",
+    "lang": "pl",
+    "system": "Reference",
+    "source": "Check your blood pressure every morning and write it down.",
+    "reference": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+    "target": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+    "planted_error": null
+  },
+  {
+    "id": "p12-pl-a",
+    "phrase_id": "p12",
+    "lang": "pl",
+    "system": "System A",
+    "source": "Check your blood pressure every morning and write it down.",
+    "reference": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+    "target": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+    "planted_error": null
+  },
+  {
+    "id": "p12-pl-b",
+    "phrase_id": "p12",
+    "lang": "pl",
+    "system": "System B",
+    "source": "Check your blood pressure every morning and write it down.",
+    "reference": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+    "target": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+    "planted_error": null
+  },
+  {
+    "id": "p12-pl-c",
+    "phrase_id": "p12",
+    "lang": "pl",
+    "system": "System C",
+    "source": "Check your blood pressure every morning and write it down.",
+    "reference": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+    "target": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+    "planted_error": null
+  },
+  {
+    "id": "p12-pt-reference",
+    "phrase_id": "p12",
+    "lang": "pt",
+    "system": "Reference",
+    "source": "Check your blood pressure every morning and write it down.",
+    "reference": "Meça a sua pressão arterial todas as manhãs e anote.",
+    "target": "Meça a sua pressão arterial todas as manhãs e anote.",
+    "planted_error": null
+  },
+  {
+    "id": "p12-pt-a",
+    "phrase_id": "p12",
+    "lang": "pt",
+    "system": "System A",
+    "source": "Check your blood pressure every morning and write it down.",
+    "reference": "Meça a sua pressão arterial todas as manhãs e anote.",
+    "target": "Meça a sua pressão arterial todas as manhãs e anote.",
+    "planted_error": null
+  },
+  {
+    "id": "p12-pt-b",
+    "phrase_id": "p12",
+    "lang": "pt",
+    "system": "System B",
+    "source": "Check your blood pressure every morning and write it down.",
+    "reference": "Meça a sua pressão arterial todas as manhãs e anote.",
+    "target": "Meça a sua pressão arterial todas as manhãs e anote.",
+    "planted_error": null
+  },
+  {
+    "id": "p12-pt-c",
+    "phrase_id": "p12",
+    "lang": "pt",
+    "system": "System C",
+    "source": "Check your blood pressure every morning and write it down.",
+    "reference": "Meça a sua pressão arterial todas as manhãs e anote.",
+    "target": "Meça a sua pressão arterial todas as manhãs e anote.",
+    "planted_error": null
+  }
+]

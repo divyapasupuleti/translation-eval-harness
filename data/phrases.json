@@ -1,0 +1,86 @@
+[
+  {
+    "id": "p01",
+    "en": "Take 2 tablets of 500 mg every 6 hours.",
+    "es": "Tome 2 comprimidos de 500 mg cada 6 horas.",
+    "pl": "Proszę przyjmować 2 tabletki po 500 mg co 6 godzin.",
+    "pt": "Tome 2 comprimidos de 500 mg a cada 6 horas."
+  },
+  {
+    "id": "p02",
+    "en": "Do not take ibuprofen with your blood thinner.",
+    "es": "No tome ibuprofeno con su anticoagulante.",
+    "pl": "Proszę nie przyjmować ibuprofenu razem z lekiem przeciwzakrzepowym.",
+    "pt": "Não tome ibuprofeno com o seu anticoagulante."
+  },
+  {
+    "id": "p03",
+    "en": "Inject 10 units of insulin before breakfast.",
+    "es": "Inyéctese 10 unidades de insulina antes del desayuno.",
+    "pl": "Proszę wstrzyknąć 10 jednostek insuliny przed śniadaniem.",
+    "pt": "Injete 10 unidades de insulina antes do café da manhã."
+  },
+  {
+    "id": "p04",
+    "en": "Do not eat or drink anything after midnight before your surgery.",
+    "es": "No coma ni beba nada después de la medianoche antes de su cirugía.",
+    "pl": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+    "pt": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia."
+  },
+  {
+    "id": "p05",
+    "en": "If you feel constipated, drink 2 litres of water a day.",
+    "es": "Si está estreñido, beba 2 litros de agua al día.",
+    "pl": "W przypadku zaparcia proszę pić 2 litry wody dziennie.",
+    "pt": "Se estiver com prisão de ventre, beba 2 litros de água por dia."
+  },
+  {
+    "id": "p06",
+    "en": "Apply the cream twice a day for 7 days.",
+    "es": "Aplique la crema dos veces al día durante 7 días.",
+    "pl": "Proszę nakładać krem dwa razy dziennie przez 7 dni.",
+    "pt": "Aplique o creme duas vezes ao dia durante 7 dias."
+  },
+  {
+    "id": "p07",
+    "en": "Your injury needs 5 stitches.",
+    "es": "Su lesión necesita 5 puntos de sutura.",
+    "pl": "Rana wymaga założenia 5 szwów.",
+    "pt": "Sua lesão precisa de 5 pontos."
+  },
+  {
+    "id": "p08",
+    "en": "Never stop taking this medicine without asking your doctor.",
+    "es": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+    "pl": "Nigdy nie należy przerywać przyjmowania tego leku bez konsultacji z lekarzem.",
+    "pt": "Nunca pare de tomar este medicamento sem falar com o seu médico."
+  },
+  {
+    "id": "p09",
+    "en": "Give the child 5 ml of syrup every 8 hours.",
+    "es": "Dele al niño 5 ml de jarabe cada 8 horas.",
+    "pl": "Proszę podawać dziecku 5 ml syropu co 8 godzin.",
+    "pt": "Dê à criança 5 ml de xarope a cada 8 horas."
+  },
+  {
+    "id": "p10",
+    "en": "You are allergic to penicillin, so do not take amoxicillin.",
+    "es": "Es alérgico a la penicilina, así que no tome amoxicilina.",
+    "pl": "Występuje uczulenie na penicylinę, dlatego proszę nie przyjmować amoksycyliny.",
+    "pt": "Você é alérgico à penicilina, então não tome amoxicilina."
+  },
+  {
+    "id": "p11",
+    "en": "Come back in 14 days to remove the stitches.",
+    "es": "Vuelva dentro de 14 días para retirar los puntos.",
+    "pl": "Proszę wrócić za 14 dni, aby zdjąć szwy.",
+    "pt": "Volte daqui a 14 dias para retirar os pontos."
+  },
+  {
+    "id": "p12",
+    "en": "Check your blood pressure every morning and write it down.",
+    "es": "Mídase la presión arterial cada mañana y anótela.",
+    "pl": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+    "pt": "Meça a sua pressão arterial todas as manhãs e anote."
+  }
+]

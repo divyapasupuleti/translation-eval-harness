@@ -1,0 +1,2773 @@
+{
+  "systems": {
+    "Reference": {
+      "segments": 36,
+      "avg_score": 100.0,
+      "pass": 36,
+      "review": 0,
+      "fail": 0
+    },
+    "Reference|es": {
+      "segments": 12,
+      "avg_score": 100.0,
+      "pass": 12,
+      "review": 0,
+      "fail": 0
+    },
+    "Reference|pl": {
+      "segments": 12,
+      "avg_score": 100.0,
+      "pass": 12,
+      "review": 0,
+      "fail": 0
+    },
+    "Reference|pt": {
+      "segments": 12,
+      "avg_score": 100.0,
+      "pass": 12,
+      "review": 0,
+      "fail": 0
+    },
+    "System A": {
+      "segments": 36,
+      "avg_score": 99.6,
+      "pass": 31,
+      "review": 5,
+      "fail": 0
+    },
+    "System A|es": {
+      "segments": 12,
+      "avg_score": 99.9,
+      "pass": 11,
+      "review": 1,
+      "fail": 0
+    },
+    "System A|pl": {
+      "segments": 12,
+      "avg_score": 99.4,
+      "pass": 10,
+      "review": 2,
+      "fail": 0
+    },
+    "System A|pt": {
+      "segments": 12,
+      "avg_score": 99.4,
+      "pass": 10,
+      "review": 2,
+      "fail": 0
+    },
+    "System B": {
+      "segments": 36,
+      "avg_score": 84.7,
+      "pass": 14,
+      "review": 0,
+      "fail": 22
+    },
+    "System B|es": {
+      "segments": 12,
+      "avg_score": 87.5,
+      "pass": 6,
+      "review": 0,
+      "fail": 6
+    },
+    "System B|pl": {
+      "segments": 12,
+      "avg_score": 81.2,
+      "pass": 3,
+      "review": 0,
+      "fail": 9
+    },
+    "System B|pt": {
+      "segments": 12,
+      "avg_score": 85.4,
+      "pass": 5,
+      "review": 0,
+      "fail": 7
+    },
+    "System C": {
+      "segments": 36,
+      "avg_score": 94.9,
+      "pass": 15,
+      "review": 17,
+      "fail": 4
+    },
+    "System C|es": {
+      "segments": 12,
+      "avg_score": 94.0,
+      "pass": 6,
+      "review": 4,
+      "fail": 2
+    },
+    "System C|pl": {
+      "segments": 12,
+      "avg_score": 96.8,
+      "pass": 4,
+      "review": 8,
+      "fail": 0
+    },
+    "System C|pt": {
+      "segments": 12,
+      "avg_score": 93.9,
+      "pass": 5,
+      "review": 5,
+      "fail": 2
+    }
+  },
+  "checker": {
+    "planted_errors": 49,
+    "overall_recall": 0.98,
+    "critical_recall": 1.0,
+    "clean_segments": 95,
+    "false_alarm_rate": 0.0,
+    "per_error": {
+      "addition": {
+        "planted": 12,
+        "caught": 12,
+        "recall": 1.0
+      },
+      "change_number": {
+        "planted": 11,
+        "caught": 11,
+        "recall": 1.0
+      },
+      "drop_negation": {
+        "planted": 6,
+        "caught": 6,
+        "recall": 1.0
+      },
+      "false_friend": {
+        "planted": 4,
+        "caught": 4,
+        "recall": 1.0
+      },
+      "omission": {
+        "planted": 3,
+        "caught": 2,
+        "recall": 0.667
+      },
+      "swap_unit": {
+        "planted": 5,
+        "caught": 5,
+        "recall": 1.0
+      },
+      "untranslated": {
+        "planted": 8,
+        "caught": 8,
+        "recall": 1.0
+      }
+    }
+  },
+  "gates": {
+    "critical_recall_min": 1.0,
+    "false_alarm_rate_max": 0.05
+  },
+  "rows": [
+    {
+      "id": "p01-es-reference",
+      "phrase_id": "p01",
+      "lang": "es",
+      "system": "Reference",
+      "source": "Take 2 tablets of 500 mg every 6 hours.",
+      "reference": "Tome 2 comprimidos de 500 mg cada 6 horas.",
+      "target": "Tome 2 comprimidos de 500 mg cada 6 horas.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p01-es-a",
+      "phrase_id": "p01",
+      "lang": "es",
+      "system": "System A",
+      "source": "Take 2 tablets of 500 mg every 6 hours.",
+      "reference": "Tome 2 comprimidos de 500 mg cada 6 horas.",
+      "target": "Tome 2 comprimidos de 500 mg cada 6 horas, y llame a su médico si tiene fiebre.",
+      "planted_error": "addition",
+      "score": 99,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "length_ratio",
+          "severity": "minor",
+          "message": "Translation is 2.03x the source length, longer than usual; check for added content",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p01-es-b",
+      "phrase_id": "p01",
+      "lang": "es",
+      "system": "System B",
+      "source": "Take 2 tablets of 500 mg every 6 hours.",
+      "reference": "Tome 2 comprimidos de 500 mg cada 6 horas.",
+      "target": "Tome 2 comprimidos de 500 ml cada 6 horas.",
+      "planted_error": "swap_unit",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "unit_mismatch",
+          "severity": "critical",
+          "message": "500 is 'mg' in the source but 'ml' in the translation",
+          "spans": [
+            "ml"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p01-es-c",
+      "phrase_id": "p01",
+      "lang": "es",
+      "system": "System C",
+      "source": "Take 2 tablets of 500 mg every 6 hours.",
+      "reference": "Tome 2 comprimidos de 500 mg cada 6 horas.",
+      "target": "Tome 2 comprimidos de 500 mg cada 6 horas, y llame a su médico si tiene fiebre.",
+      "planted_error": "addition",
+      "score": 99,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "length_ratio",
+          "severity": "minor",
+          "message": "Translation is 2.03x the source length, longer than usual; check for added content",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p01-pl-reference",
+      "phrase_id": "p01",
+      "lang": "pl",
+      "system": "Reference",
+      "source": "Take 2 tablets of 500 mg every 6 hours.",
+      "reference": "Proszę przyjmować 2 tabletki po 500 mg co 6 godzin.",
+      "target": "Proszę przyjmować 2 tabletki po 500 mg co 6 godzin.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p01-pl-a",
+      "phrase_id": "p01",
+      "lang": "pl",
+      "system": "System A",
+      "source": "Take 2 tablets of 500 mg every 6 hours.",
+      "reference": "Proszę przyjmować 2 tabletki po 500 mg co 6 godzin.",
+      "target": "Proszę przyjmować 2 tabletki po 500 mg co 6 godzin.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p01-pl-b",
+      "phrase_id": "p01",
+      "lang": "pl",
+      "system": "System B",
+      "source": "Take 2 tablets of 500 mg every 6 hours.",
+      "reference": "Proszę przyjmować 2 tabletki po 500 mg co 6 godzin.",
+      "target": "Proszę przyjmować 2 tabletki po 500 ml co 6 godzin.",
+      "planted_error": "swap_unit",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "unit_mismatch",
+          "severity": "critical",
+          "message": "500 is 'mg' in the source but 'ml' in the translation",
+          "spans": [
+            "ml"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p01-pl-c",
+      "phrase_id": "p01",
+      "lang": "pl",
+      "system": "System C",
+      "source": "Take 2 tablets of 500 mg every 6 hours.",
+      "reference": "Proszę przyjmować 2 tabletki po 500 mg co 6 godzin.",
+      "target": "Proszę przyjmować 2 tabletki po 500 mg co 6 godzin.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p01-pt-reference",
+      "phrase_id": "p01",
+      "lang": "pt",
+      "system": "Reference",
+      "source": "Take 2 tablets of 500 mg every 6 hours.",
+      "reference": "Tome 2 comprimidos de 500 mg a cada 6 horas.",
+      "target": "Tome 2 comprimidos de 500 mg a cada 6 horas.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p01-pt-a",
+      "phrase_id": "p01",
+      "lang": "pt",
+      "system": "System A",
+      "source": "Take 2 tablets of 500 mg every 6 hours.",
+      "reference": "Tome 2 comprimidos de 500 mg a cada 6 horas.",
+      "target": "Tome 2 comprimidos de 500 mg a cada 6 horas.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p01-pt-b",
+      "phrase_id": "p01",
+      "lang": "pt",
+      "system": "System B",
+      "source": "Take 2 tablets of 500 mg every 6 hours.",
+      "reference": "Tome 2 comprimidos de 500 mg a cada 6 horas.",
+      "target": "Tome 20 comprimidos de 500 mg a cada 6 horas.",
+      "planted_error": "change_number",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "number_mismatch",
+          "severity": "critical",
+          "message": "Numbers differ from source: missing 2; unexpected 20",
+          "spans": [
+            "20"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p01-pt-c",
+      "phrase_id": "p01",
+      "lang": "pt",
+      "system": "System C",
+      "source": "Take 2 tablets of 500 mg every 6 hours.",
+      "reference": "Tome 2 comprimidos de 500 mg a cada 6 horas.",
+      "target": "Tome 2 comprimidos de 500 mg a cada 6 horas.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p02-es-reference",
+      "phrase_id": "p02",
+      "lang": "es",
+      "system": "Reference",
+      "source": "Do not take ibuprofen with your blood thinner.",
+      "reference": "No tome ibuprofeno con su anticoagulante.",
+      "target": "No tome ibuprofeno con su anticoagulante.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p02-es-a",
+      "phrase_id": "p02",
+      "lang": "es",
+      "system": "System A",
+      "source": "Do not take ibuprofen with your blood thinner.",
+      "reference": "No tome ibuprofeno con su anticoagulante.",
+      "target": "No tome ibuprofeno con su anticoagulante.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p02-es-b",
+      "phrase_id": "p02",
+      "lang": "es",
+      "system": "System B",
+      "source": "Do not take ibuprofen with your blood thinner.",
+      "reference": "No tome ibuprofeno con su anticoagulante.",
+      "target": "No tome ibuprofeno con su anticoagulante.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p02-es-c",
+      "phrase_id": "p02",
+      "lang": "es",
+      "system": "System C",
+      "source": "Do not take ibuprofen with your blood thinner.",
+      "reference": "No tome ibuprofeno con su anticoagulante.",
+      "target": "No tome ibuprofeno con su anticoagulante, y llame a su médico si tiene fiebre.",
+      "planted_error": "addition",
+      "score": 99,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "length_ratio",
+          "severity": "minor",
+          "message": "Translation is 1.70x the source length, longer than usual; check for added content",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p02-pl-reference",
+      "phrase_id": "p02",
+      "lang": "pl",
+      "system": "Reference",
+      "source": "Do not take ibuprofen with your blood thinner.",
+      "reference": "Proszę nie przyjmować ibuprofenu razem z lekiem przeciwzakrzepowym.",
+      "target": "Proszę nie przyjmować ibuprofenu razem z lekiem przeciwzakrzepowym.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p02-pl-a",
+      "phrase_id": "p02",
+      "lang": "pl",
+      "system": "System A",
+      "source": "Do not take ibuprofen with your blood thinner.",
+      "reference": "Proszę nie przyjmować ibuprofenu razem z lekiem przeciwzakrzepowym.",
+      "target": "Proszę nie przyjmować ibuprofenu razem z lekiem przeciwzakrzepowym.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p02-pl-b",
+      "phrase_id": "p02",
+      "lang": "pl",
+      "system": "System B",
+      "source": "Do not take ibuprofen with your blood thinner.",
+      "reference": "Proszę nie przyjmować ibuprofenu razem z lekiem przeciwzakrzepowym.",
+      "target": "Proszę przyjmować ibuprofenu razem z lekiem przeciwzakrzepowym.",
+      "planted_error": "drop_negation",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "negation_dropped",
+          "severity": "critical",
+          "message": "Source is a prohibition ('do not' / 'never') but the translation has no negation",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p02-pl-c",
+      "phrase_id": "p02",
+      "lang": "pl",
+      "system": "System C",
+      "source": "Do not take ibuprofen with your blood thinner.",
+      "reference": "Proszę nie przyjmować ibuprofenu razem z lekiem przeciwzakrzepowym.",
+      "target": "Proszę nie przyjmować ibuprofenu razem z lekiem blood thinner.",
+      "planted_error": "untranslated",
+      "score": 90,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "missing_term",
+          "severity": "major",
+          "message": "Expected an approved translation of 'blood thinner': przeciwzakrzepow",
+          "spans": []
+        },
+        {
+          "check": "untranslated",
+          "severity": "major",
+          "message": "English words left in the translation: blood, thinner",
+          "spans": [
+            "blood",
+            "thinner"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p02-pt-reference",
+      "phrase_id": "p02",
+      "lang": "pt",
+      "system": "Reference",
+      "source": "Do not take ibuprofen with your blood thinner.",
+      "reference": "Não tome ibuprofeno com o seu anticoagulante.",
+      "target": "Não tome ibuprofeno com o seu anticoagulante.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p02-pt-a",
+      "phrase_id": "p02",
+      "lang": "pt",
+      "system": "System A",
+      "source": "Do not take ibuprofen with your blood thinner.",
+      "reference": "Não tome ibuprofeno com o seu anticoagulante.",
+      "target": "Não tome ibuprofeno com o seu anticoagulante.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p02-pt-b",
+      "phrase_id": "p02",
+      "lang": "pt",
+      "system": "System B",
+      "source": "Do not take ibuprofen with your blood thinner.",
+      "reference": "Não tome ibuprofeno com o seu anticoagulante.",
+      "target": "Tome ibuprofeno com o seu anticoagulante.",
+      "planted_error": "drop_negation",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "negation_dropped",
+          "severity": "critical",
+          "message": "Source is a prohibition ('do not' / 'never') but the translation has no negation",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p02-pt-c",
+      "phrase_id": "p02",
+      "lang": "pt",
+      "system": "System C",
+      "source": "Do not take ibuprofen with your blood thinner.",
+      "reference": "Não tome ibuprofeno com o seu anticoagulante.",
+      "target": "Não tome ibuprofeno com o seu anticoagulante.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p03-es-reference",
+      "phrase_id": "p03",
+      "lang": "es",
+      "system": "Reference",
+      "source": "Inject 10 units of insulin before breakfast.",
+      "reference": "Inyéctese 10 unidades de insulina antes del desayuno.",
+      "target": "Inyéctese 10 unidades de insulina antes del desayuno.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p03-es-a",
+      "phrase_id": "p03",
+      "lang": "es",
+      "system": "System A",
+      "source": "Inject 10 units of insulin before breakfast.",
+      "reference": "Inyéctese 10 unidades de insulina antes del desayuno.",
+      "target": "Inyéctese 10 unidades de insulina antes.",
+      "planted_error": "omission",
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p03-es-b",
+      "phrase_id": "p03",
+      "lang": "es",
+      "system": "System B",
+      "source": "Inject 10 units of insulin before breakfast.",
+      "reference": "Inyéctese 10 unidades de insulina antes del desayuno.",
+      "target": "Inyéctese 100 unidades de insulina antes del desayuno.",
+      "planted_error": "change_number",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "number_mismatch",
+          "severity": "critical",
+          "message": "Numbers differ from source: missing 10; unexpected 100",
+          "spans": [
+            "100"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p03-es-c",
+      "phrase_id": "p03",
+      "lang": "es",
+      "system": "System C",
+      "source": "Inject 10 units of insulin before breakfast.",
+      "reference": "Inyéctese 10 unidades de insulina antes del desayuno.",
+      "target": "Inyéctese 10 unidades de insulina antes del desayuno.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p03-pl-reference",
+      "phrase_id": "p03",
+      "lang": "pl",
+      "system": "Reference",
+      "source": "Inject 10 units of insulin before breakfast.",
+      "reference": "Proszę wstrzyknąć 10 jednostek insuliny przed śniadaniem.",
+      "target": "Proszę wstrzyknąć 10 jednostek insuliny przed śniadaniem.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p03-pl-a",
+      "phrase_id": "p03",
+      "lang": "pl",
+      "system": "System A",
+      "source": "Inject 10 units of insulin before breakfast.",
+      "reference": "Proszę wstrzyknąć 10 jednostek insuliny przed śniadaniem.",
+      "target": "Proszę wstrzyknąć 10 jednostek insuliny przed śniadaniem, a w razie gorączki zadzwonić do lekarza.",
+      "planted_error": "addition",
+      "score": 99,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "length_ratio",
+          "severity": "minor",
+          "message": "Translation is 2.23x the source length, longer than usual; check for added content",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p03-pl-b",
+      "phrase_id": "p03",
+      "lang": "pl",
+      "system": "System B",
+      "source": "Inject 10 units of insulin before breakfast.",
+      "reference": "Proszę wstrzyknąć 10 jednostek insuliny przed śniadaniem.",
+      "target": "Proszę wstrzyknąć 100 jednostek insuliny przed śniadaniem.",
+      "planted_error": "change_number",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "number_mismatch",
+          "severity": "critical",
+          "message": "Numbers differ from source: missing 10; unexpected 100",
+          "spans": [
+            "100"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p03-pl-c",
+      "phrase_id": "p03",
+      "lang": "pl",
+      "system": "System C",
+      "source": "Inject 10 units of insulin before breakfast.",
+      "reference": "Proszę wstrzyknąć 10 jednostek insuliny przed śniadaniem.",
+      "target": "Proszę wstrzyknąć 10 jednostek insulin przed śniadaniem.",
+      "planted_error": "untranslated",
+      "score": 95,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "untranslated",
+          "severity": "major",
+          "message": "English words left in the translation: insulin",
+          "spans": [
+            "insulin"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p03-pt-reference",
+      "phrase_id": "p03",
+      "lang": "pt",
+      "system": "Reference",
+      "source": "Inject 10 units of insulin before breakfast.",
+      "reference": "Injete 10 unidades de insulina antes do café da manhã.",
+      "target": "Injete 10 unidades de insulina antes do café da manhã.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p03-pt-a",
+      "phrase_id": "p03",
+      "lang": "pt",
+      "system": "System A",
+      "source": "Inject 10 units of insulin before breakfast.",
+      "reference": "Injete 10 unidades de insulina antes do café da manhã.",
+      "target": "Injete 10 unidades de insulina antes do café da manhã.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p03-pt-b",
+      "phrase_id": "p03",
+      "lang": "pt",
+      "system": "System B",
+      "source": "Inject 10 units of insulin before breakfast.",
+      "reference": "Injete 10 unidades de insulina antes do café da manhã.",
+      "target": "Injete 100 unidades de insulina antes do café da manhã.",
+      "planted_error": "change_number",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "number_mismatch",
+          "severity": "critical",
+          "message": "Numbers differ from source: missing 10; unexpected 100",
+          "spans": [
+            "100"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p03-pt-c",
+      "phrase_id": "p03",
+      "lang": "pt",
+      "system": "System C",
+      "source": "Inject 10 units of insulin before breakfast.",
+      "reference": "Injete 10 unidades de insulina antes do café da manhã.",
+      "target": "Injete 10 unidades de insulin antes do café da manhã.",
+      "planted_error": "untranslated",
+      "score": 90,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "missing_term",
+          "severity": "major",
+          "message": "Expected an approved translation of 'insulin': insulina",
+          "spans": []
+        },
+        {
+          "check": "untranslated",
+          "severity": "major",
+          "message": "English words left in the translation: insulin",
+          "spans": [
+            "insulin"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p04-es-reference",
+      "phrase_id": "p04",
+      "lang": "es",
+      "system": "Reference",
+      "source": "Do not eat or drink anything after midnight before your surgery.",
+      "reference": "No coma ni beba nada después de la medianoche antes de su cirugía.",
+      "target": "No coma ni beba nada después de la medianoche antes de su cirugía.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p04-es-a",
+      "phrase_id": "p04",
+      "lang": "es",
+      "system": "System A",
+      "source": "Do not eat or drink anything after midnight before your surgery.",
+      "reference": "No coma ni beba nada después de la medianoche antes de su cirugía.",
+      "target": "No coma ni beba nada después de la medianoche antes de su cirugía.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p04-es-b",
+      "phrase_id": "p04",
+      "lang": "es",
+      "system": "System B",
+      "source": "Do not eat or drink anything after midnight before your surgery.",
+      "reference": "No coma ni beba nada después de la medianoche antes de su cirugía.",
+      "target": "Coma ni beba nada después de la medianoche antes de su cirugía.",
+      "planted_error": "drop_negation",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "negation_dropped",
+          "severity": "critical",
+          "message": "Source is a prohibition ('do not' / 'never') but the translation has no negation",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p04-es-c",
+      "phrase_id": "p04",
+      "lang": "es",
+      "system": "System C",
+      "source": "Do not eat or drink anything after midnight before your surgery.",
+      "reference": "No coma ni beba nada después de la medianoche antes de su cirugía.",
+      "target": "No coma ni beba nada después de la medianoche antes de su cirugía.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p04-pl-reference",
+      "phrase_id": "p04",
+      "lang": "pl",
+      "system": "Reference",
+      "source": "Do not eat or drink anything after midnight before your surgery.",
+      "reference": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+      "target": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p04-pl-a",
+      "phrase_id": "p04",
+      "lang": "pl",
+      "system": "System A",
+      "source": "Do not eat or drink anything after midnight before your surgery.",
+      "reference": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+      "target": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p04-pl-b",
+      "phrase_id": "p04",
+      "lang": "pl",
+      "system": "System B",
+      "source": "Do not eat or drink anything after midnight before your surgery.",
+      "reference": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+      "target": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p04-pl-c",
+      "phrase_id": "p04",
+      "lang": "pl",
+      "system": "System C",
+      "source": "Do not eat or drink anything after midnight before your surgery.",
+      "reference": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+      "target": "Proszę nic nie jeść ani nie pić po północy przed operacją.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p04-pt-reference",
+      "phrase_id": "p04",
+      "lang": "pt",
+      "system": "Reference",
+      "source": "Do not eat or drink anything after midnight before your surgery.",
+      "reference": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia.",
+      "target": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p04-pt-a",
+      "phrase_id": "p04",
+      "lang": "pt",
+      "system": "System A",
+      "source": "Do not eat or drink anything after midnight before your surgery.",
+      "reference": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia.",
+      "target": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p04-pt-b",
+      "phrase_id": "p04",
+      "lang": "pt",
+      "system": "System B",
+      "source": "Do not eat or drink anything after midnight before your surgery.",
+      "reference": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia.",
+      "target": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p04-pt-c",
+      "phrase_id": "p04",
+      "lang": "pt",
+      "system": "System C",
+      "source": "Do not eat or drink anything after midnight before your surgery.",
+      "reference": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia.",
+      "target": "Não coma nem beba nada depois da meia-noite antes da sua cirurgia, e ligue para o médico se tiver febre.",
+      "planted_error": "addition",
+      "score": 99,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "length_ratio",
+          "severity": "minor",
+          "message": "Translation is 1.62x the source length, longer than usual; check for added content",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p05-es-reference",
+      "phrase_id": "p05",
+      "lang": "es",
+      "system": "Reference",
+      "source": "If you feel constipated, drink 2 litres of water a day.",
+      "reference": "Si está estreñido, beba 2 litros de agua al día.",
+      "target": "Si está estreñido, beba 2 litros de agua al día.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p05-es-a",
+      "phrase_id": "p05",
+      "lang": "es",
+      "system": "System A",
+      "source": "If you feel constipated, drink 2 litres of water a day.",
+      "reference": "Si está estreñido, beba 2 litros de agua al día.",
+      "target": "Si está estreñido, beba 2 litros de agua al día.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p05-es-b",
+      "phrase_id": "p05",
+      "lang": "es",
+      "system": "System B",
+      "source": "If you feel constipated, drink 2 litres of water a day.",
+      "reference": "Si está estreñido, beba 2 litros de agua al día.",
+      "target": "Si está estreñido, beba 2 litros de agua al día.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p05-es-c",
+      "phrase_id": "p05",
+      "lang": "es",
+      "system": "System C",
+      "source": "If you feel constipated, drink 2 litres of water a day.",
+      "reference": "Si está estreñido, beba 2 litros de agua al día.",
+      "target": "Si está constipado, beba 2 litros de agua al día.",
+      "planted_error": "false_friend",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "forbidden_term",
+          "severity": "critical",
+          "message": "'constipated' translated with a false friend. Spanish 'constipado' means having a cold",
+          "spans": [
+            "constipado"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p05-pl-reference",
+      "phrase_id": "p05",
+      "lang": "pl",
+      "system": "Reference",
+      "source": "If you feel constipated, drink 2 litres of water a day.",
+      "reference": "W przypadku zaparcia proszę pić 2 litry wody dziennie.",
+      "target": "W przypadku zaparcia proszę pić 2 litry wody dziennie.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p05-pl-a",
+      "phrase_id": "p05",
+      "lang": "pl",
+      "system": "System A",
+      "source": "If you feel constipated, drink 2 litres of water a day.",
+      "reference": "W przypadku zaparcia proszę pić 2 litry wody dziennie.",
+      "target": "W przypadku zaparcia proszę pić 2 litry wody dziennie.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p05-pl-b",
+      "phrase_id": "p05",
+      "lang": "pl",
+      "system": "System B",
+      "source": "If you feel constipated, drink 2 litres of water a day.",
+      "reference": "W przypadku zaparcia proszę pić 2 litry wody dziennie.",
+      "target": "W przypadku zaparcia proszę pić 2 litry wody dziennie.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p05-pl-c",
+      "phrase_id": "p05",
+      "lang": "pl",
+      "system": "System C",
+      "source": "If you feel constipated, drink 2 litres of water a day.",
+      "reference": "W przypadku zaparcia proszę pić 2 litry wody dziennie.",
+      "target": "W przypadku constipated proszę pić 2 litry wody dziennie.",
+      "planted_error": "untranslated",
+      "score": 90,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "missing_term",
+          "severity": "major",
+          "message": "Expected an approved translation of 'constipated': zaparci",
+          "spans": []
+        },
+        {
+          "check": "untranslated",
+          "severity": "major",
+          "message": "English words left in the translation: constipated",
+          "spans": [
+            "constipated"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p05-pt-reference",
+      "phrase_id": "p05",
+      "lang": "pt",
+      "system": "Reference",
+      "source": "If you feel constipated, drink 2 litres of water a day.",
+      "reference": "Se estiver com prisão de ventre, beba 2 litros de água por dia.",
+      "target": "Se estiver com prisão de ventre, beba 2 litros de água por dia.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p05-pt-a",
+      "phrase_id": "p05",
+      "lang": "pt",
+      "system": "System A",
+      "source": "If you feel constipated, drink 2 litres of water a day.",
+      "reference": "Se estiver com prisão de ventre, beba 2 litros de água por dia.",
+      "target": "Se estiver com prisão de ventre, beba 2 litros de água por dia, e ligue para o médico se tiver febre.",
+      "planted_error": "addition",
+      "score": 99,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "length_ratio",
+          "severity": "minor",
+          "message": "Translation is 1.84x the source length, longer than usual; check for added content",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p05-pt-b",
+      "phrase_id": "p05",
+      "lang": "pt",
+      "system": "System B",
+      "source": "If you feel constipated, drink 2 litres of water a day.",
+      "reference": "Se estiver com prisão de ventre, beba 2 litros de água por dia.",
+      "target": "Se estiver com prisão de ventre, beba 20 litros de água por dia.",
+      "planted_error": "change_number",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "number_mismatch",
+          "severity": "critical",
+          "message": "Numbers differ from source: missing 2; unexpected 20",
+          "spans": [
+            "20"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p05-pt-c",
+      "phrase_id": "p05",
+      "lang": "pt",
+      "system": "System C",
+      "source": "If you feel constipated, drink 2 litres of water a day.",
+      "reference": "Se estiver com prisão de ventre, beba 2 litros de água por dia.",
+      "target": "Se estiver constipado, beba 2 litros de água por dia.",
+      "planted_error": "false_friend",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "forbidden_term",
+          "severity": "critical",
+          "message": "'constipated' translated with a false friend. Portuguese 'constipado' means having a cold",
+          "spans": [
+            "constipado"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p06-es-reference",
+      "phrase_id": "p06",
+      "lang": "es",
+      "system": "Reference",
+      "source": "Apply the cream twice a day for 7 days.",
+      "reference": "Aplique la crema dos veces al día durante 7 días.",
+      "target": "Aplique la crema dos veces al día durante 7 días.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p06-es-a",
+      "phrase_id": "p06",
+      "lang": "es",
+      "system": "System A",
+      "source": "Apply the cream twice a day for 7 days.",
+      "reference": "Aplique la crema dos veces al día durante 7 días.",
+      "target": "Aplique la crema dos veces al día durante 7 días.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p06-es-b",
+      "phrase_id": "p06",
+      "lang": "es",
+      "system": "System B",
+      "source": "Apply the cream twice a day for 7 days.",
+      "reference": "Aplique la crema dos veces al día durante 7 días.",
+      "target": "Aplique la crema dos veces al día durante 7 días.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p06-es-c",
+      "phrase_id": "p06",
+      "lang": "es",
+      "system": "System C",
+      "source": "Apply the cream twice a day for 7 days.",
+      "reference": "Aplique la crema dos veces al día durante 7 días.",
+      "target": "Aplique la crema dos veces al día durante 7 días.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p06-pl-reference",
+      "phrase_id": "p06",
+      "lang": "pl",
+      "system": "Reference",
+      "source": "Apply the cream twice a day for 7 days.",
+      "reference": "Proszę nakładać krem dwa razy dziennie przez 7 dni.",
+      "target": "Proszę nakładać krem dwa razy dziennie przez 7 dni.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p06-pl-a",
+      "phrase_id": "p06",
+      "lang": "pl",
+      "system": "System A",
+      "source": "Apply the cream twice a day for 7 days.",
+      "reference": "Proszę nakładać krem dwa razy dziennie przez 7 dni.",
+      "target": "Proszę nakładać krem dwa razy dziennie przez 7 dni.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p06-pl-b",
+      "phrase_id": "p06",
+      "lang": "pl",
+      "system": "System B",
+      "source": "Apply the cream twice a day for 7 days.",
+      "reference": "Proszę nakładać krem dwa razy dziennie przez 7 dni.",
+      "target": "Proszę nakładać krem dwa razy dziennie przez 7 tygodni.",
+      "planted_error": "swap_unit",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "unit_mismatch",
+          "severity": "critical",
+          "message": "7 is 'day' in the source but 'week' in the translation",
+          "spans": [
+            "tygodni"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p06-pl-c",
+      "phrase_id": "p06",
+      "lang": "pl",
+      "system": "System C",
+      "source": "Apply the cream twice a day for 7 days.",
+      "reference": "Proszę nakładać krem dwa razy dziennie przez 7 dni.",
+      "target": "Proszę nakładać krem dwa razy dziennie przez 7 dni, a w razie gorączki zadzwonić do lekarza.",
+      "planted_error": "addition",
+      "score": 99,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "length_ratio",
+          "severity": "minor",
+          "message": "Translation is 2.36x the source length, longer than usual; check for added content",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p06-pt-reference",
+      "phrase_id": "p06",
+      "lang": "pt",
+      "system": "Reference",
+      "source": "Apply the cream twice a day for 7 days.",
+      "reference": "Aplique o creme duas vezes ao dia durante 7 dias.",
+      "target": "Aplique o creme duas vezes ao dia durante 7 dias.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p06-pt-a",
+      "phrase_id": "p06",
+      "lang": "pt",
+      "system": "System A",
+      "source": "Apply the cream twice a day for 7 days.",
+      "reference": "Aplique o creme duas vezes ao dia durante 7 dias.",
+      "target": "Aplique o creme duas vezes ao dia durante 7 dias.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p06-pt-b",
+      "phrase_id": "p06",
+      "lang": "pt",
+      "system": "System B",
+      "source": "Apply the cream twice a day for 7 days.",
+      "reference": "Aplique o creme duas vezes ao dia durante 7 dias.",
+      "target": "Aplique o creme duas vezes ao dia durante 70 dias.",
+      "planted_error": "change_number",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "number_mismatch",
+          "severity": "critical",
+          "message": "Numbers differ from source: missing 7; unexpected 70",
+          "spans": [
+            "70"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p06-pt-c",
+      "phrase_id": "p06",
+      "lang": "pt",
+      "system": "System C",
+      "source": "Apply the cream twice a day for 7 days.",
+      "reference": "Aplique o creme duas vezes ao dia durante 7 dias.",
+      "target": "Aplique o creme duas vezes ao dia durante 7 dias, e ligue para o médico se tiver febre.",
+      "planted_error": "addition",
+      "score": 99,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "length_ratio",
+          "severity": "minor",
+          "message": "Translation is 2.23x the source length, longer than usual; check for added content",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p07-es-reference",
+      "phrase_id": "p07",
+      "lang": "es",
+      "system": "Reference",
+      "source": "Your injury needs 5 stitches.",
+      "reference": "Su lesión necesita 5 puntos de sutura.",
+      "target": "Su lesión necesita 5 puntos de sutura.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p07-es-a",
+      "phrase_id": "p07",
+      "lang": "es",
+      "system": "System A",
+      "source": "Your injury needs 5 stitches.",
+      "reference": "Su lesión necesita 5 puntos de sutura.",
+      "target": "Su lesión necesita 5 puntos de sutura.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p07-es-b",
+      "phrase_id": "p07",
+      "lang": "es",
+      "system": "System B",
+      "source": "Your injury needs 5 stitches.",
+      "reference": "Su lesión necesita 5 puntos de sutura.",
+      "target": "Su lesión necesita 50 puntos de sutura.",
+      "planted_error": "change_number",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "number_mismatch",
+          "severity": "critical",
+          "message": "Numbers differ from source: missing 5; unexpected 50",
+          "spans": [
+            "50"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p07-es-c",
+      "phrase_id": "p07",
+      "lang": "es",
+      "system": "System C",
+      "source": "Your injury needs 5 stitches.",
+      "reference": "Su lesión necesita 5 puntos de sutura.",
+      "target": "Su injuria necesita 5 puntos de sutura.",
+      "planted_error": "false_friend",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "forbidden_term",
+          "severity": "critical",
+          "message": "'injury' translated with a false friend. Spanish 'injuria' means an insult",
+          "spans": [
+            "injuria"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p07-pl-reference",
+      "phrase_id": "p07",
+      "lang": "pl",
+      "system": "Reference",
+      "source": "Your injury needs 5 stitches.",
+      "reference": "Rana wymaga założenia 5 szwów.",
+      "target": "Rana wymaga założenia 5 szwów.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p07-pl-a",
+      "phrase_id": "p07",
+      "lang": "pl",
+      "system": "System A",
+      "source": "Your injury needs 5 stitches.",
+      "reference": "Rana wymaga założenia 5 szwów.",
+      "target": "Rana wymaga założenia 5 szwów.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p07-pl-b",
+      "phrase_id": "p07",
+      "lang": "pl",
+      "system": "System B",
+      "source": "Your injury needs 5 stitches.",
+      "reference": "Rana wymaga założenia 5 szwów.",
+      "target": "Rana wymaga założenia 50 szwów.",
+      "planted_error": "change_number",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "number_mismatch",
+          "severity": "critical",
+          "message": "Numbers differ from source: missing 5; unexpected 50",
+          "spans": [
+            "50"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p07-pl-c",
+      "phrase_id": "p07",
+      "lang": "pl",
+      "system": "System C",
+      "source": "Your injury needs 5 stitches.",
+      "reference": "Rana wymaga założenia 5 szwów.",
+      "target": "Rana wymaga założenia 5 szwów, a w razie gorączki zadzwonić do lekarza.",
+      "planted_error": "addition",
+      "score": 99,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "length_ratio",
+          "severity": "minor",
+          "message": "Translation is 2.45x the source length, longer than usual; check for added content",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p07-pt-reference",
+      "phrase_id": "p07",
+      "lang": "pt",
+      "system": "Reference",
+      "source": "Your injury needs 5 stitches.",
+      "reference": "Sua lesão precisa de 5 pontos.",
+      "target": "Sua lesão precisa de 5 pontos.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p07-pt-a",
+      "phrase_id": "p07",
+      "lang": "pt",
+      "system": "System A",
+      "source": "Your injury needs 5 stitches.",
+      "reference": "Sua lesão precisa de 5 pontos.",
+      "target": "Sua lesão precisa de 5 pontos.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p07-pt-b",
+      "phrase_id": "p07",
+      "lang": "pt",
+      "system": "System B",
+      "source": "Your injury needs 5 stitches.",
+      "reference": "Sua lesão precisa de 5 pontos.",
+      "target": "Sua lesão precisa de 5 pontos.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p07-pt-c",
+      "phrase_id": "p07",
+      "lang": "pt",
+      "system": "System C",
+      "source": "Your injury needs 5 stitches.",
+      "reference": "Sua lesão precisa de 5 pontos.",
+      "target": "Sua injúria precisa de 5 pontos.",
+      "planted_error": "false_friend",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "forbidden_term",
+          "severity": "critical",
+          "message": "'injury' translated with a false friend. Portuguese 'injúria' means an insult",
+          "spans": [
+            "injúria"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p08-es-reference",
+      "phrase_id": "p08",
+      "lang": "es",
+      "system": "Reference",
+      "source": "Never stop taking this medicine without asking your doctor.",
+      "reference": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+      "target": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p08-es-a",
+      "phrase_id": "p08",
+      "lang": "es",
+      "system": "System A",
+      "source": "Never stop taking this medicine without asking your doctor.",
+      "reference": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+      "target": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p08-es-b",
+      "phrase_id": "p08",
+      "lang": "es",
+      "system": "System B",
+      "source": "Never stop taking this medicine without asking your doctor.",
+      "reference": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+      "target": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p08-es-c",
+      "phrase_id": "p08",
+      "lang": "es",
+      "system": "System C",
+      "source": "Never stop taking this medicine without asking your doctor.",
+      "reference": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+      "target": "Nunca deje de tomar este medicamento sin consultar a su médico.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p08-pl-reference",
+      "phrase_id": "p08",
+      "lang": "pl",
+      "system": "Reference",
+      "source": "Never stop taking this medicine without asking your doctor.",
+      "reference": "Nigdy nie należy przerywać przyjmowania tego leku bez konsultacji z lekarzem.",
+      "target": "Nigdy nie należy przerywać przyjmowania tego leku bez konsultacji z lekarzem.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p08-pl-a",
+      "phrase_id": "p08",
+      "lang": "pl",
+      "system": "System A",
+      "source": "Never stop taking this medicine without asking your doctor.",
+      "reference": "Nigdy nie należy przerywać przyjmowania tego leku bez konsultacji z lekarzem.",
+      "target": "Nigdy nie należy przerywać przyjmowania tego leku bez konsultacji z lekarzem.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p08-pl-b",
+      "phrase_id": "p08",
+      "lang": "pl",
+      "system": "System B",
+      "source": "Never stop taking this medicine without asking your doctor.",
+      "reference": "Nigdy nie należy przerywać przyjmowania tego leku bez konsultacji z lekarzem.",
+      "target": "Należy przerywać przyjmowania tego leku bez konsultacji z lekarzem.",
+      "planted_error": "drop_negation",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "negation_dropped",
+          "severity": "critical",
+          "message": "Source is a prohibition ('do not' / 'never') but the translation has no negation",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p08-pl-c",
+      "phrase_id": "p08",
+      "lang": "pl",
+      "system": "System C",
+      "source": "Never stop taking this medicine without asking your doctor.",
+      "reference": "Nigdy nie należy przerywać przyjmowania tego leku bez konsultacji z lekarzem.",
+      "target": "Nigdy nie należy przerywać przyjmowania tego leku bez konsultacji z lekarzem, a w razie gorączki zadzwonić do lekarza.",
+      "planted_error": "addition",
+      "score": 99,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "length_ratio",
+          "severity": "minor",
+          "message": "Translation is 2.00x the source length, longer than usual; check for added content",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p08-pt-reference",
+      "phrase_id": "p08",
+      "lang": "pt",
+      "system": "Reference",
+      "source": "Never stop taking this medicine without asking your doctor.",
+      "reference": "Nunca pare de tomar este medicamento sem falar com o seu médico.",
+      "target": "Nunca pare de tomar este medicamento sem falar com o seu médico.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p08-pt-a",
+      "phrase_id": "p08",
+      "lang": "pt",
+      "system": "System A",
+      "source": "Never stop taking this medicine without asking your doctor.",
+      "reference": "Nunca pare de tomar este medicamento sem falar com o seu médico.",
+      "target": "Nunca pare de tomar este medicamento sem falar com o seu médico.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p08-pt-b",
+      "phrase_id": "p08",
+      "lang": "pt",
+      "system": "System B",
+      "source": "Never stop taking this medicine without asking your doctor.",
+      "reference": "Nunca pare de tomar este medicamento sem falar com o seu médico.",
+      "target": "Pare de tomar este medicamento sem falar com o seu médico.",
+      "planted_error": "drop_negation",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "negation_dropped",
+          "severity": "critical",
+          "message": "Source is a prohibition ('do not' / 'never') but the translation has no negation",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p08-pt-c",
+      "phrase_id": "p08",
+      "lang": "pt",
+      "system": "System C",
+      "source": "Never stop taking this medicine without asking your doctor.",
+      "reference": "Nunca pare de tomar este medicamento sem falar com o seu médico.",
+      "target": "Nunca pare de tomar este medicamento sem falar com o seu médico.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p09-es-reference",
+      "phrase_id": "p09",
+      "lang": "es",
+      "system": "Reference",
+      "source": "Give the child 5 ml of syrup every 8 hours.",
+      "reference": "Dele al niño 5 ml de jarabe cada 8 horas.",
+      "target": "Dele al niño 5 ml de jarabe cada 8 horas.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p09-es-a",
+      "phrase_id": "p09",
+      "lang": "es",
+      "system": "System A",
+      "source": "Give the child 5 ml of syrup every 8 hours.",
+      "reference": "Dele al niño 5 ml de jarabe cada 8 horas.",
+      "target": "Dele al niño 5 ml de jarabe cada 8 horas.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p09-es-b",
+      "phrase_id": "p09",
+      "lang": "es",
+      "system": "System B",
+      "source": "Give the child 5 ml of syrup every 8 hours.",
+      "reference": "Dele al niño 5 ml de jarabe cada 8 horas.",
+      "target": "Dele al niño 50 ml de jarabe cada 8 horas.",
+      "planted_error": "change_number",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "number_mismatch",
+          "severity": "critical",
+          "message": "Numbers differ from source: missing 5; unexpected 50",
+          "spans": [
+            "50"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p09-es-c",
+      "phrase_id": "p09",
+      "lang": "es",
+      "system": "System C",
+      "source": "Give the child 5 ml of syrup every 8 hours.",
+      "reference": "Dele al niño 5 ml de jarabe cada 8 horas.",
+      "target": "Dele al niño 5 ml de jarabe cada 8 horas.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p09-pl-reference",
+      "phrase_id": "p09",
+      "lang": "pl",
+      "system": "Reference",
+      "source": "Give the child 5 ml of syrup every 8 hours.",
+      "reference": "Proszę podawać dziecku 5 ml syropu co 8 godzin.",
+      "target": "Proszę podawać dziecku 5 ml syropu co 8 godzin.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p09-pl-a",
+      "phrase_id": "p09",
+      "lang": "pl",
+      "system": "System A",
+      "source": "Give the child 5 ml of syrup every 8 hours.",
+      "reference": "Proszę podawać dziecku 5 ml syropu co 8 godzin.",
+      "target": "Proszę podawać dziecku 5 ml syropu co 8 godzin.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p09-pl-b",
+      "phrase_id": "p09",
+      "lang": "pl",
+      "system": "System B",
+      "source": "Give the child 5 ml of syrup every 8 hours.",
+      "reference": "Proszę podawać dziecku 5 ml syropu co 8 godzin.",
+      "target": "Proszę podawać dziecku 5 mg syropu co 8 godzin.",
+      "planted_error": "swap_unit",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "unit_mismatch",
+          "severity": "critical",
+          "message": "5 is 'ml' in the source but 'mg' in the translation",
+          "spans": [
+            "mg"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p09-pl-c",
+      "phrase_id": "p09",
+      "lang": "pl",
+      "system": "System C",
+      "source": "Give the child 5 ml of syrup every 8 hours.",
+      "reference": "Proszę podawać dziecku 5 ml syropu co 8 godzin.",
+      "target": "Proszę podawać dziecku 5 ml syropu co 8 godzin.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p09-pt-reference",
+      "phrase_id": "p09",
+      "lang": "pt",
+      "system": "Reference",
+      "source": "Give the child 5 ml of syrup every 8 hours.",
+      "reference": "Dê à criança 5 ml de xarope a cada 8 horas.",
+      "target": "Dê à criança 5 ml de xarope a cada 8 horas.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p09-pt-a",
+      "phrase_id": "p09",
+      "lang": "pt",
+      "system": "System A",
+      "source": "Give the child 5 ml of syrup every 8 hours.",
+      "reference": "Dê à criança 5 ml de xarope a cada 8 horas.",
+      "target": "Dê à criança 5 ml de xarope a cada 8 horas.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p09-pt-b",
+      "phrase_id": "p09",
+      "lang": "pt",
+      "system": "System B",
+      "source": "Give the child 5 ml of syrup every 8 hours.",
+      "reference": "Dê à criança 5 ml de xarope a cada 8 horas.",
+      "target": "Dê à criança 50 ml de xarope a cada 8 horas.",
+      "planted_error": "change_number",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "number_mismatch",
+          "severity": "critical",
+          "message": "Numbers differ from source: missing 5; unexpected 50",
+          "spans": [
+            "50"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p09-pt-c",
+      "phrase_id": "p09",
+      "lang": "pt",
+      "system": "System C",
+      "source": "Give the child 5 ml of syrup every 8 hours.",
+      "reference": "Dê à criança 5 ml de xarope a cada 8 horas.",
+      "target": "Dê à criança 5 ml de xarope a cada 8 horas, e ligue para o médico se tiver febre.",
+      "planted_error": "addition",
+      "score": 99,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "length_ratio",
+          "severity": "minor",
+          "message": "Translation is 1.88x the source length, longer than usual; check for added content",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p10-es-reference",
+      "phrase_id": "p10",
+      "lang": "es",
+      "system": "Reference",
+      "source": "You are allergic to penicillin, so do not take amoxicillin.",
+      "reference": "Es alérgico a la penicilina, así que no tome amoxicilina.",
+      "target": "Es alérgico a la penicilina, así que no tome amoxicilina.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p10-es-a",
+      "phrase_id": "p10",
+      "lang": "es",
+      "system": "System A",
+      "source": "You are allergic to penicillin, so do not take amoxicillin.",
+      "reference": "Es alérgico a la penicilina, así que no tome amoxicilina.",
+      "target": "Es alérgico a la penicilina, así que no tome amoxicilina.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p10-es-b",
+      "phrase_id": "p10",
+      "lang": "es",
+      "system": "System B",
+      "source": "You are allergic to penicillin, so do not take amoxicillin.",
+      "reference": "Es alérgico a la penicilina, así que no tome amoxicilina.",
+      "target": "Es alérgico a la penicilina, así que no tome amoxicilina.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p10-es-c",
+      "phrase_id": "p10",
+      "lang": "es",
+      "system": "System C",
+      "source": "You are allergic to penicillin, so do not take amoxicillin.",
+      "reference": "Es alérgico a la penicilina, así que no tome amoxicilina.",
+      "target": "Es alérgico a la penicillin, así que no tome amoxicilina.",
+      "planted_error": "untranslated",
+      "score": 90,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "missing_term",
+          "severity": "major",
+          "message": "Expected an approved translation of 'penicillin': penicilina",
+          "spans": []
+        },
+        {
+          "check": "untranslated",
+          "severity": "major",
+          "message": "English words left in the translation: penicillin",
+          "spans": [
+            "penicillin"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p10-pl-reference",
+      "phrase_id": "p10",
+      "lang": "pl",
+      "system": "Reference",
+      "source": "You are allergic to penicillin, so do not take amoxicillin.",
+      "reference": "Występuje uczulenie na penicylinę, dlatego proszę nie przyjmować amoksycyliny.",
+      "target": "Występuje uczulenie na penicylinę, dlatego proszę nie przyjmować amoksycyliny.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p10-pl-a",
+      "phrase_id": "p10",
+      "lang": "pl",
+      "system": "System A",
+      "source": "You are allergic to penicillin, so do not take amoxicillin.",
+      "reference": "Występuje uczulenie na penicylinę, dlatego proszę nie przyjmować amoksycyliny.",
+      "target": "Występuje uczulenie na penicylinę, dlatego proszę nie przyjmować amoksycyliny.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p10-pl-b",
+      "phrase_id": "p10",
+      "lang": "pl",
+      "system": "System B",
+      "source": "You are allergic to penicillin, so do not take amoxicillin.",
+      "reference": "Występuje uczulenie na penicylinę, dlatego proszę nie przyjmować amoksycyliny.",
+      "target": "Występuje uczulenie na penicylinę, dlatego proszę przyjmować amoksycyliny.",
+      "planted_error": "drop_negation",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "negation_dropped",
+          "severity": "critical",
+          "message": "Source is a prohibition ('do not' / 'never') but the translation has no negation",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p10-pl-c",
+      "phrase_id": "p10",
+      "lang": "pl",
+      "system": "System C",
+      "source": "You are allergic to penicillin, so do not take amoxicillin.",
+      "reference": "Występuje uczulenie na penicylinę, dlatego proszę nie przyjmować amoksycyliny.",
+      "target": "Występuje uczulenie na penicillin, dlatego proszę nie przyjmować amoksycyliny.",
+      "planted_error": "untranslated",
+      "score": 90,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "missing_term",
+          "severity": "major",
+          "message": "Expected an approved translation of 'penicillin': penicylin",
+          "spans": []
+        },
+        {
+          "check": "untranslated",
+          "severity": "major",
+          "message": "English words left in the translation: penicillin",
+          "spans": [
+            "penicillin"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p10-pt-reference",
+      "phrase_id": "p10",
+      "lang": "pt",
+      "system": "Reference",
+      "source": "You are allergic to penicillin, so do not take amoxicillin.",
+      "reference": "Você é alérgico à penicilina, então não tome amoxicilina.",
+      "target": "Você é alérgico à penicilina, então não tome amoxicilina.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p10-pt-a",
+      "phrase_id": "p10",
+      "lang": "pt",
+      "system": "System A",
+      "source": "You are allergic to penicillin, so do not take amoxicillin.",
+      "reference": "Você é alérgico à penicilina, então não tome amoxicilina.",
+      "target": "Você é alérgico à penicilina, então não tome amoxicilina.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p10-pt-b",
+      "phrase_id": "p10",
+      "lang": "pt",
+      "system": "System B",
+      "source": "You are allergic to penicillin, so do not take amoxicillin.",
+      "reference": "Você é alérgico à penicilina, então não tome amoxicilina.",
+      "target": "Você é alérgico à penicilina, então não tome amoxicilina.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p10-pt-c",
+      "phrase_id": "p10",
+      "lang": "pt",
+      "system": "System C",
+      "source": "You are allergic to penicillin, so do not take amoxicillin.",
+      "reference": "Você é alérgico à penicilina, então não tome amoxicilina.",
+      "target": "Você é alérgico à penicilina, então não tome amoxicilina.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p11-es-reference",
+      "phrase_id": "p11",
+      "lang": "es",
+      "system": "Reference",
+      "source": "Come back in 14 days to remove the stitches.",
+      "reference": "Vuelva dentro de 14 días para retirar los puntos.",
+      "target": "Vuelva dentro de 14 días para retirar los puntos.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p11-es-a",
+      "phrase_id": "p11",
+      "lang": "es",
+      "system": "System A",
+      "source": "Come back in 14 days to remove the stitches.",
+      "reference": "Vuelva dentro de 14 días para retirar los puntos.",
+      "target": "Vuelva dentro de 14 días para retirar los puntos.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p11-es-b",
+      "phrase_id": "p11",
+      "lang": "es",
+      "system": "System B",
+      "source": "Come back in 14 days to remove the stitches.",
+      "reference": "Vuelva dentro de 14 días para retirar los puntos.",
+      "target": "Vuelva dentro de 140 días para retirar los puntos.",
+      "planted_error": "change_number",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "number_mismatch",
+          "severity": "critical",
+          "message": "Numbers differ from source: missing 14; unexpected 140",
+          "spans": [
+            "140"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p11-es-c",
+      "phrase_id": "p11",
+      "lang": "es",
+      "system": "System C",
+      "source": "Come back in 14 days to remove the stitches.",
+      "reference": "Vuelva dentro de 14 días para retirar los puntos.",
+      "target": "Vuelva dentro de 14 días para retirar los stitches.",
+      "planted_error": "untranslated",
+      "score": 90,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "missing_term",
+          "severity": "major",
+          "message": "Expected an approved translation of 'stitches': puntos",
+          "spans": []
+        },
+        {
+          "check": "untranslated",
+          "severity": "major",
+          "message": "English words left in the translation: stitches",
+          "spans": [
+            "stitches"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p11-pl-reference",
+      "phrase_id": "p11",
+      "lang": "pl",
+      "system": "Reference",
+      "source": "Come back in 14 days to remove the stitches.",
+      "reference": "Proszę wrócić za 14 dni, aby zdjąć szwy.",
+      "target": "Proszę wrócić za 14 dni, aby zdjąć szwy.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p11-pl-a",
+      "phrase_id": "p11",
+      "lang": "pl",
+      "system": "System A",
+      "source": "Come back in 14 days to remove the stitches.",
+      "reference": "Proszę wrócić za 14 dni, aby zdjąć szwy.",
+      "target": "Proszę wrócić za 14 dni.",
+      "planted_error": "omission",
+      "score": 94,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "missing_term",
+          "severity": "major",
+          "message": "Expected an approved translation of 'stitches': szw",
+          "spans": []
+        },
+        {
+          "check": "length_ratio",
+          "severity": "minor",
+          "message": "Translation is 0.55x the source length, shorter than usual; check for omitted content",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p11-pl-b",
+      "phrase_id": "p11",
+      "lang": "pl",
+      "system": "System B",
+      "source": "Come back in 14 days to remove the stitches.",
+      "reference": "Proszę wrócić za 14 dni, aby zdjąć szwy.",
+      "target": "Proszę wrócić za 14 tygodni, aby zdjąć szwy.",
+      "planted_error": "swap_unit",
+      "score": 75,
+      "verdict": "FAIL",
+      "issues": [
+        {
+          "check": "unit_mismatch",
+          "severity": "critical",
+          "message": "14 is 'day' in the source but 'week' in the translation",
+          "spans": [
+            "tygodni"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p11-pl-c",
+      "phrase_id": "p11",
+      "lang": "pl",
+      "system": "System C",
+      "source": "Come back in 14 days to remove the stitches.",
+      "reference": "Proszę wrócić za 14 dni, aby zdjąć szwy.",
+      "target": "Proszę wrócić za 14 dni, aby zdjąć szwy, a w razie gorączki zadzwonić do lekarza.",
+      "planted_error": "addition",
+      "score": 99,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "length_ratio",
+          "severity": "minor",
+          "message": "Translation is 1.84x the source length, longer than usual; check for added content",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p11-pt-reference",
+      "phrase_id": "p11",
+      "lang": "pt",
+      "system": "Reference",
+      "source": "Come back in 14 days to remove the stitches.",
+      "reference": "Volte daqui a 14 dias para retirar os pontos.",
+      "target": "Volte daqui a 14 dias para retirar os pontos.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p11-pt-a",
+      "phrase_id": "p11",
+      "lang": "pt",
+      "system": "System A",
+      "source": "Come back in 14 days to remove the stitches.",
+      "reference": "Volte daqui a 14 dias para retirar os pontos.",
+      "target": "Volte daqui a 14 dias para.",
+      "planted_error": "omission",
+      "score": 94,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "missing_term",
+          "severity": "major",
+          "message": "Expected an approved translation of 'stitches': pontos",
+          "spans": []
+        },
+        {
+          "check": "length_ratio",
+          "severity": "minor",
+          "message": "Translation is 0.61x the source length, shorter than usual; check for omitted content",
+          "spans": []
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p11-pt-b",
+      "phrase_id": "p11",
+      "lang": "pt",
+      "system": "System B",
+      "source": "Come back in 14 days to remove the stitches.",
+      "reference": "Volte daqui a 14 dias para retirar os pontos.",
+      "target": "Volte daqui a 14 dias para retirar os pontos.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p11-pt-c",
+      "phrase_id": "p11",
+      "lang": "pt",
+      "system": "System C",
+      "source": "Come back in 14 days to remove the stitches.",
+      "reference": "Volte daqui a 14 dias para retirar os pontos.",
+      "target": "Volte daqui a 14 dias para retirar os stitches.",
+      "planted_error": "untranslated",
+      "score": 90,
+      "verdict": "REVIEW",
+      "issues": [
+        {
+          "check": "missing_term",
+          "severity": "major",
+          "message": "Expected an approved translation of 'stitches': pontos",
+          "spans": []
+        },
+        {
+          "check": "untranslated",
+          "severity": "major",
+          "message": "English words left in the translation: stitches",
+          "spans": [
+            "stitches"
+          ]
+        }
+      ],
+      "caught": true,
+      "false_alarm": false
+    },
+    {
+      "id": "p12-es-reference",
+      "phrase_id": "p12",
+      "lang": "es",
+      "system": "Reference",
+      "source": "Check your blood pressure every morning and write it down.",
+      "reference": "Mídase la presión arterial cada mañana y anótela.",
+      "target": "Mídase la presión arterial cada mañana y anótela.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p12-es-a",
+      "phrase_id": "p12",
+      "lang": "es",
+      "system": "System A",
+      "source": "Check your blood pressure every morning and write it down.",
+      "reference": "Mídase la presión arterial cada mañana y anótela.",
+      "target": "Mídase la presión arterial cada mañana y anótela.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p12-es-b",
+      "phrase_id": "p12",
+      "lang": "es",
+      "system": "System B",
+      "source": "Check your blood pressure every morning and write it down.",
+      "reference": "Mídase la presión arterial cada mañana y anótela.",
+      "target": "Mídase la presión arterial cada mañana y anótela.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p12-es-c",
+      "phrase_id": "p12",
+      "lang": "es",
+      "system": "System C",
+      "source": "Check your blood pressure every morning and write it down.",
+      "reference": "Mídase la presión arterial cada mañana y anótela.",
+      "target": "Mídase la presión arterial cada mañana y anótela.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p12-pl-reference",
+      "phrase_id": "p12",
+      "lang": "pl",
+      "system": "Reference",
+      "source": "Check your blood pressure every morning and write it down.",
+      "reference": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+      "target": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p12-pl-a",
+      "phrase_id": "p12",
+      "lang": "pl",
+      "system": "System A",
+      "source": "Check your blood pressure every morning and write it down.",
+      "reference": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+      "target": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p12-pl-b",
+      "phrase_id": "p12",
+      "lang": "pl",
+      "system": "System B",
+      "source": "Check your blood pressure every morning and write it down.",
+      "reference": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+      "target": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p12-pl-c",
+      "phrase_id": "p12",
+      "lang": "pl",
+      "system": "System C",
+      "source": "Check your blood pressure every morning and write it down.",
+      "reference": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+      "target": "Proszę mierzyć ciśnienie krwi każdego ranka i je zapisywać.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p12-pt-reference",
+      "phrase_id": "p12",
+      "lang": "pt",
+      "system": "Reference",
+      "source": "Check your blood pressure every morning and write it down.",
+      "reference": "Meça a sua pressão arterial todas as manhãs e anote.",
+      "target": "Meça a sua pressão arterial todas as manhãs e anote.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p12-pt-a",
+      "phrase_id": "p12",
+      "lang": "pt",
+      "system": "System A",
+      "source": "Check your blood pressure every morning and write it down.",
+      "reference": "Meça a sua pressão arterial todas as manhãs e anote.",
+      "target": "Meça a sua pressão arterial todas as manhãs e anote.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p12-pt-b",
+      "phrase_id": "p12",
+      "lang": "pt",
+      "system": "System B",
+      "source": "Check your blood pressure every morning and write it down.",
+      "reference": "Meça a sua pressão arterial todas as manhãs e anote.",
+      "target": "Meça a sua pressão arterial todas as manhãs e anote.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    },
+    {
+      "id": "p12-pt-c",
+      "phrase_id": "p12",
+      "lang": "pt",
+      "system": "System C",
+      "source": "Check your blood pressure every morning and write it down.",
+      "reference": "Meça a sua pressão arterial todas as manhãs e anote.",
+      "target": "Meça a sua pressão arterial todas as manhãs e anote.",
+      "planted_error": null,
+      "score": 100,
+      "verdict": "PASS",
+      "issues": [],
+      "caught": false,
+      "false_alarm": false
+    }
+  ]
+}

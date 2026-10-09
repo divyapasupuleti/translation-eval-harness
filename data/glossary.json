@@ -1,0 +1,41 @@
+{
+  "blood thinner": {
+    "es": {"approved": ["anticoagulante"]},
+    "pl": {"approved": ["przeciwzakrzepow"]},
+    "pt": {"approved": ["anticoagulante"]}
+  },
+  "insulin": {
+    "es": {"approved": ["insulina"]},
+    "pl": {"approved": ["insulin"]},
+    "pt": {"approved": ["insulina"]}
+  },
+  "constipated": {
+    "es": {"approved": ["estreñid"], "forbidden": ["constipad"], "false_friend": ["está estreñido", "está constipado"],
+           "note": "Spanish 'constipado' means having a cold"},
+    "pl": {"approved": ["zaparci"]},
+    "pt": {"approved": ["prisão de ventre"], "forbidden": ["constipad"], "false_friend": ["estiver com prisão de ventre", "estiver constipado"],
+           "note": "Portuguese 'constipado' means having a cold"}
+  },
+  "injury": {
+    "es": {"approved": ["lesión"], "forbidden": ["injuria"], "false_friend": ["lesión", "injuria"],
+           "note": "Spanish 'injuria' means an insult"},
+    "pl": {"approved": ["rana", "uraz"]},
+    "pt": {"approved": ["lesão"], "forbidden": ["injúria"], "false_friend": ["lesão", "injúria"],
+           "note": "Portuguese 'injúria' means an insult"}
+  },
+  "penicillin": {
+    "es": {"approved": ["penicilina"]},
+    "pl": {"approved": ["penicylin"]},
+    "pt": {"approved": ["penicilina"]}
+  },
+  "blood pressure": {
+    "es": {"approved": ["presión arterial"]},
+    "pl": {"approved": ["ciśnienie"]},
+    "pt": {"approved": ["pressão arterial"]}
+  },
+  "stitches": {
+    "es": {"approved": ["puntos"]},
+    "pl": {"approved": ["szw"]},
+    "pt": {"approved": ["pontos"]}
+  }
+}
