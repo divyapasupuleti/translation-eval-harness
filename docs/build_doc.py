@@ -27,28 +27,108 @@ from tqe.inject import SYSTEMS  # noqa: E402
 
 DOCS = ROOT / "docs"
 DIAGRAM = DOCS / "architecture.png"
+PIPELINE_DIAGRAM = DOCS / "check-pipeline.png"
+CICD_DIAGRAM = DOCS / "ci-cd.png"
 OUTPUT = DOCS / "translation-eval-harness.docx"
 PAGES_URL = "https://divyapasupuleti.github.io/translation-eval-harness/"
+INK = "#1f2d3d"
+
+
+def _canvas(width: float, height: float):
+    fig, ax = plt.subplots(figsize=(width, height), dpi=200)
+    ax.set_xlim(0, width)
+    ax.set_ylim(0, height)
+    ax.axis("off")
+    return fig, ax
+
+
+def _save(fig, path: Path) -> None:
+    fig.savefig(path, bbox_inches="tight", facecolor="white")
+    plt.close(fig)
+
+
+def _box(ax, x, y, w, h, title, lines, color):
+    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.05,rounding_size=0.15",
+                                linewidth=1.4, edgecolor=INK, facecolor=color))
+    ax.text(x + w / 2, y + h - 0.28, title, ha="center", va="top", fontsize=10.5, weight="bold")
+    for i, line in enumerate(lines):
+        ax.text(x + w / 2, y + h - 0.68 - i * 0.3, line, ha="center", va="top", fontsize=8.3)
+
+
+def _arrow(ax, x1, y1, x2, y2, label="", dx=0.0, dy=0.17):
+    ax.add_patch(FancyArrowPatch((x1, y1), (x2, y2), arrowstyle="-|>", mutation_scale=15,
+                                 linewidth=1.3, color=INK))
+    if label:
+        ax.text((x1 + x2) / 2 + dx, (y1 + y2) / 2 + dy, label, ha="center", fontsize=8.3, style="italic")
+
+
+def draw_check_pipeline() -> None:
+    fig, ax = _canvas(12, 6.2)
+    _box(ax, 0.1, 4.3, 2.3, 1.6, "Input", ["English source", "translation", "language: es / pl / pt"], "#e8f1fb")
+    _box(ax, 2.95, 4.3, 2.3, 1.6, "Tokenise", ["words and numbers", "number + unit pairs", "e.g. (500, mg)"], "#fdf2e3")
+
+    checks = [
+        ("Numbers", ["same numbers", "critical"]),
+        ("Units", ["same unit per number", "critical"]),
+        ("Negation", ["not / no / nie / não", "critical"]),
+        ("Glossary", ["approved term, false friend", "critical or major"]),
+        ("Untranslated", ["English words left", "major"]),
+        ("Length", ["ratio per language", "minor"]),
+    ]
+    for i, (title, lines) in enumerate(checks):
+        x = 0.1 + i * 1.98
+        _box(ax, x, 2.15, 1.82, 1.4, title, lines, "#fdecea")
+        _arrow(ax, 4.1, 4.25, x + 0.91, 3.6)
+
+    _box(ax, 2.95, 0.15, 2.3, 1.4, "Issues", ["check, severity,", "message, words to highlight"], "#fdf2e3")
+    _box(ax, 5.8, 0.15, 2.3, 1.4, "Score", ["100 - 25 x critical", "- 5 x major - 1 x minor"], "#fdf2e3")
+    _box(ax, 8.65, 0.15, 3.2, 1.4, "Verdict", ["FAIL: any critical", "REVIEW: any other issue", "PASS: no issues"], "#eef7ee")
+
+    _arrow(ax, 2.45, 5.1, 2.9, 5.1)
+    for i in range(6):
+        ax.plot([0.1 + i * 1.98 + 0.91, 4.1], [2.1, 1.6], color=INK, linewidth=1.0)
+    _arrow(ax, 5.3, 0.85, 5.75, 0.85)
+    _arrow(ax, 8.15, 0.85, 8.6, 0.85)
+    ax.text(6.0, 4.0, "all six checks run on every translation", fontsize=8.3, style="italic")
+    _save(fig, PIPELINE_DIAGRAM)
+
+
+def draw_cicd() -> None:
+    fig, ax = _canvas(12, 5.6)
+    _box(ax, 0.1, 2.0, 2.0, 1.6, "git push", ["to main", "or pull request"], "#e8f1fb")
+
+    ax.add_patch(FancyBboxPatch((2.6, 3.1), 9.3, 2.3, boxstyle="round,pad=0.05,rounding_size=0.2",
+                                linewidth=1, linestyle="--", edgecolor="#6b7c93", facecolor="none"))
+    ax.text(2.75, 5.2, "ci.yml (push and pull request)", fontsize=9, color="#6b7c93")
+    _box(ax, 2.9, 3.3, 2.0, 1.5, "Install", ["Python 3.12", "pytest"], "#fdf2e3")
+    _box(ax, 5.3, 3.3, 2.0, 1.5, "Unit tests", ["9 tests", "pytest -q"], "#fdecea")
+    _box(ax, 7.7, 3.3, 2.0, 1.5, "Quality gate", ["critical recall 100%", "false alarms <= 5%"], "#fdecea")
+    _box(ax, 10.0, 3.3, 1.7, 1.5, "Result", ["green tick", "or red cross"], "#eef7ee")
+
+    ax.add_patch(FancyBboxPatch((2.6, 0.1), 9.3, 2.3, boxstyle="round,pad=0.05,rounding_size=0.2",
+                                linewidth=1, linestyle="--", edgecolor="#6b7c93", facecolor="none"))
+    ax.text(2.75, 2.2, "pages.yml (push to main)", fontsize=9, color="#6b7c93")
+    _box(ax, 2.9, 0.3, 2.0, 1.5, "Evaluate", ["python -m", "tqe.evaluate"], "#fdf2e3")
+    _box(ax, 5.3, 0.3, 2.0, 1.5, "Build page", ["python -m", "tqe.dashboard"], "#fdf2e3")
+    _box(ax, 7.7, 0.3, 2.0, 1.5, "Upload", ["site/ folder", "Pages artifact"], "#fdf2e3")
+    _box(ax, 10.0, 0.3, 1.7, 1.5, "Live", ["github.io", "dashboard"], "#f3eefb")
+
+    _arrow(ax, 2.15, 3.1, 2.85, 4.0)
+    _arrow(ax, 2.15, 2.5, 2.85, 1.1)
+    for x in (4.95, 7.35, 9.75):
+        _arrow(ax, x, 4.05, x + 0.3, 4.05)
+        _arrow(ax, x, 1.05, x + 0.3, 1.05)
+    _save(fig, CICD_DIAGRAM)
 
 
 def draw_architecture() -> None:
-    fig, ax = plt.subplots(figsize=(12, 5.4), dpi=200)
-    ax.set_xlim(0, 12)
-    ax.set_ylim(0, 5.4)
-    ax.axis("off")
+    fig, ax = _canvas(12, 5.4)
 
-    def box(x, y, w, h, title, lines, color):
-        ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.05,rounding_size=0.15",
-                                    linewidth=1.4, edgecolor="#1f2d3d", facecolor=color))
-        ax.text(x + w / 2, y + h - 0.28, title, ha="center", va="top", fontsize=10.5, weight="bold")
-        for i, line in enumerate(lines):
-            ax.text(x + w / 2, y + h - 0.68 - i * 0.3, line, ha="center", va="top", fontsize=8.3)
+    def box(*args):
+        _box(ax, *args)
 
-    def arrow(x1, y1, x2, y2, label="", dx=0.0, dy=0.17):
-        ax.add_patch(FancyArrowPatch((x1, y1), (x2, y2), arrowstyle="-|>", mutation_scale=15,
-                                     linewidth=1.3, color="#1f2d3d"))
-        if label:
-            ax.text((x1 + x2) / 2 + dx, (y1 + y2) / 2 + dy, label, ha="center", fontsize=8.3, style="italic")
+    def arrow(*args, **kwargs):
+        _arrow(ax, *args, **kwargs)
 
     box(0.1, 3.2, 2.1, 1.7, "Source phrases", ["12 English instructions", "+ reference es / pl / pt", "data/phrases.json"], "#e8f1fb")
     box(2.75, 3.2, 2.3, 1.7, "Error injector", ["3 simulated systems", "plant 7 error types", "tqe/inject.py"], "#fdf2e3")
@@ -71,9 +151,7 @@ def draw_architecture() -> None:
     ax.plot([3.9, 3.9, 8.85], [3.15, 2.7, 2.7], color="#1f2d3d", linewidth=1.3)
     arrow(8.85, 2.7, 8.85, 3.15)
     ax.text(7.85, 2.45, "planted error (answer key)", ha="center", fontsize=8.3, style="italic")
-
-    fig.savefig(DIAGRAM, bbox_inches="tight", facecolor="white")
-    plt.close(fig)
+    _save(fig, DIAGRAM)
 
 
 def code(doc: Document, text: str) -> None:
@@ -105,6 +183,8 @@ def table(doc: Document, header: list[str], rows: list[list[str]], font_size: fl
 
 def build() -> None:
     draw_architecture()
+    draw_check_pipeline()
+    draw_cicd()
     report = run(load_candidates())
     systems, checker = report["systems"], report["checker"]
 
@@ -130,6 +210,13 @@ def build() -> None:
     )
 
     doc.add_heading("2. Architecture", 1)
+    doc.add_paragraph(
+        "The project has three layers: offline data generation (phrases, glossary and simulated systems), a "
+        "reference-free checking engine, and reporting (evaluation, dashboard and CI). Everything runs on the "
+        "Python standard library, so it needs no API keys, databases or servers."
+    )
+
+    doc.add_heading("2.1 System overview", 2)
     doc.add_picture(str(DIAGRAM), width=Inches(6.5))
     doc.add_paragraph(
         "Twelve English instructions have a correct reference translation in each language. The injector "
@@ -147,6 +234,65 @@ def build() -> None:
         ["Dashboard", "tqe/dashboard.py", "Self-contained HTML: charts, filters, side-by-side highlighted view"],
         ["CLI", "tqe/__main__.py", "Check one translation; exits 1 on FAIL"],
         ["CI", ".github/workflows/", "Tests and quality gate; builds and publishes the dashboard"],
+    ])
+
+    doc.add_heading("2.2 How one translation is checked", 2)
+    doc.add_picture(str(PIPELINE_DIAGRAM), width=Inches(6.5))
+    doc.add_paragraph(
+        "check(source, target, lang) splits both sentences into words and numbers, and pairs each number with the "
+        "unit word after it. All six checks run independently and each returns zero or more issues with a "
+        "severity and the exact words to highlight. The issues are combined into one score and a verdict. The same "
+        "function is used by the CLI, the evaluation and the dashboard, so all three always agree."
+    )
+
+    doc.add_heading("2.3 Build and deployment", 2)
+    doc.add_picture(str(CICD_DIAGRAM), width=Inches(6.5))
+    doc.add_paragraph(
+        "Two GitHub Actions workflows run on every push. ci.yml runs the unit tests and the quality gate, and "
+        "fails the build if any critical error is missed or false alarms exceed 5%; it also runs on pull "
+        "requests, so a change that weakens the checks cannot be merged unnoticed. pages.yml re-runs the "
+        "evaluation, rebuilds the dashboard and publishes it to GitHub Pages, so the live page always reflects "
+        "the code on main."
+    )
+
+    doc.add_heading("2.4 Folder layout", 2)
+    code(doc,
+         "translation-eval-harness/\n"
+         "├── data/\n"
+         "│   ├── phrases.json         12 English instructions + reference es / pl / pt\n"
+         "│   ├── glossary.json        approved terms and false friends per language\n"
+         "│   └── candidates.json      144 generated translations with the planted error\n"
+         "├── tqe/\n"
+         "│   ├── checks.py            the six checks, score and verdict\n"
+         "│   ├── inject.py            simulated systems and error injectors\n"
+         "│   ├── evaluate.py          system comparison, checker recall, CI gate\n"
+         "│   ├── dashboard.py         builds site/index.html\n"
+         "│   └── __main__.py          python -m tqe (check one translation)\n"
+         "├── reports/results.json     every check result and all metrics\n"
+         "├── site/index.html          the dashboard (one self-contained file)\n"
+         "├── tests/test_checks.py     unit tests\n"
+         "├── docs/                    this document, diagrams, screenshots\n"
+         "└── .github/workflows/       ci.yml, pages.yml")
+
+    doc.add_heading("2.5 Data format", 2)
+    doc.add_paragraph("Each generated translation in data/candidates.json:")
+    example = next(c for c in load_candidates() if c["planted_error"] == "swap_unit")
+    code(doc, json.dumps(example, indent=2, ensure_ascii=False))
+    doc.add_paragraph(
+        "planted_error is the answer key. It is null for correct translations and is never shown to the checks; "
+        "only the evaluation reads it, to work out whether each mistake was caught."
+    )
+
+    doc.add_heading("2.6 Design decisions", 2)
+    table(doc, ["Decision", "Why"], [
+        ["Reference-free checks", "In production there is no correct translation to compare against, so the "
+                                  "checks use only the source, the translation and the glossary"],
+        ["Rules, not a model", "Every flag is explainable and repeatable, runs offline, and costs nothing; "
+                               "a model-based judge can be added later for meaning-level errors"],
+        ["Planted errors", "Gives a known answer for every translation, so the checker itself can be measured"],
+        ["Severity levels", "Critical issues block the translation; minor ones only ask for a human look, "
+                            "which keeps reviewers focused on what matters"],
+        ["Single-file dashboard", "No server or JavaScript libraries; it opens offline and hosts free on GitHub Pages"],
     ])
 
     doc.add_heading("Checks", 2)
